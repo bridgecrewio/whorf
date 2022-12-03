@@ -2,6 +2,7 @@ FROM python:3.10-slim
 
 # mention "admissionController" as the source of integration to bridgecrew.cloud
 ENV BC_SOURCE=admissionController
+ENV PIP_ENV_VERSION="2022.11.25"
 ENV RUN_IN_DOCKER=True
 
 RUN set -eux; \
@@ -12,11 +13,14 @@ RUN set -eux; \
 
 WORKDIR /app
 
-COPY requirements.txt checkov-requirements.txt ./
+COPY Pipfile Pipfile.lock ./
 
 RUN set -eux; \
-    pip install -r requirements.txt; \
-    pip install -r checkov-requirements.txt
+    pip install pipenv==${PIP_ENV_VERSION}; \
+    pipenv requirements > requirements.txt; \
+    pip install -r requirements.txt --no-deps; \
+    rm -f requirements.txt; \
+    pip uninstall -y pipenv
 
 COPY whorf.py wsgi.py ./
 
