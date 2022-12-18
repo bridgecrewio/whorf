@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6d4d51d2d579be98968dda3109e017a1e15d36e4481470e607355744b9666e55"
+            "sha256": "b15368219e2392984dad4fd956a45baac6e10252c8e5c748a33d1d58efb5a4d4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -190,19 +190,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:13ba1d98ab5e2591be2dd19c779d67aa4210f126a827c9a376532ace435d8df9",
-                "sha256:e222714a6a841f318d3b6557d915dcc3729ff286e9aa3d03b5d26d6bfce3a3bd"
+                "sha256:672b97a634f3408d455bf94a6dfd59ef0c6150019885bc7107e465f062d58c26",
+                "sha256:e0d6215313b03f09a9a38eccc88c1d3ba9868bcaaeb8b20eeb6d88fc3018b94d"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.26.30"
+            "version": "==1.26.32"
         },
         "botocore": {
             "hashes": [
-                "sha256:6bfe917c022b92c093da448aae71b18f7dcbbbc69403f57ee39ca4775b2888e6",
-                "sha256:9364417f53842167f8bcf72b9ab3c78457c7df613051101952b2470d9de7ea31"
+                "sha256:27bc3903f7f8c813efd1605ff13ffdfca2c37dc78cadfa488cfda78fca323deb",
+                "sha256:b1a65edca151665a6844bf9f317440e31d8d5e4cbce3477f2661462e20c213b1"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.29.30"
+            "version": "==1.29.32"
         },
         "cached-property": {
             "hashes": [
@@ -306,11 +306,11 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:02a82ffca838704aa23bbb2af1762bb292899f236c17f078ef73810d4203f08e",
-                "sha256:b3fae81c69e8a5f0398fa5a9bbc71c53d74e8ab21e6b0ef0584c7199075e7a95"
+                "sha256:b0033df15b088abd7cc743728926d7cacb0971c7adbbc53cec5dd9a904bd4ccd",
+                "sha256:ed5e03c4680b78ce7dfc1e1bd0c6488ad7ceb9bf0f52df2d0861e3b77e92547a"
             ],
             "index": "pypi",
-            "version": "==2.2.168"
+            "version": "==2.2.169"
         },
         "click": {
             "hashes": [
