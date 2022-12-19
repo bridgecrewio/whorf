@@ -57,6 +57,7 @@ jobs:
     runs-on: [self-hosted, public, linux, x64]
     environment: release
     permissions:
+      contents: write
       packages: write
       id-token: write  # Enable OIDC
     env:
@@ -138,3 +139,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a  # v4
         with:
           commit_message: update k8s deployment [skip ci]
+          file_pattern: k8s/*.yaml
