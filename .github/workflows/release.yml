@@ -48,7 +48,6 @@ jobs:
           pipenv install checkov==${{ steps.version.outputs.version }}
           pipenv lock
       - uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a  # v4
-        id: git_auto_commit
         with:
           commit_message: Bump checkov version to ${{ steps.version.outputs.version }} [skip ci]
           tagging_message: ${{ steps.version.outputs.version }}
@@ -136,8 +135,6 @@ jobs:
           find: "image: bridgecrew/whorf@sha256:[a-f0-9]{64}"
           replace: "image: ${{ env.DH_IMAGE_NAME }}@${{ steps.docker_push.outputs.digest }}"
           include: "k8s/deployment.yaml"
-      - name: commit changes to deployment
-        run: |
-          git commit --reuse-message=HEAD@{1} k8s/deployment.yaml || echo "No changes to commit"
-          git commit -m "update k8s deployment [skip ci]" k8s/deployment.yaml || echo "No changes to commit"
-          git push origin
+      - uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a  # v4
+        with:
+          commit_message: update k8s deployment [skip ci]
