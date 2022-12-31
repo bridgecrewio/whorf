@@ -19,8 +19,6 @@ spec:
     metadata:
       labels:
         app: validate
-      annotations:
-        seccomp.security.alpha.kubernetes.io/pod: "docker/default"
     spec:
       containers:
       - name: webhook
@@ -83,6 +81,8 @@ spec:
         runAsNonRoot: true
         runAsUser: 11000
         runAsGroup: 11000
+        seccompProfile:
+          type: RuntimeDefault
       volumes:
       - name: bridgecrew-secret
         secret:
@@ -91,15 +91,15 @@ spec:
         secret:
           secretName: admission-tls
       - name: "config"
-        projected: 
+        projected:
           sources:
           - configMap:
               name: "checkovconfig"
           - configMap:
-              name: "whorfconfig"  
+              name: "whorfconfig"
               items:
-              - key: "k8s.properties"
-                path: "k8s.properties"        
+              - key: "whorf.yaml"
+                path: "whorf.yaml"
       - emptyDir: {}
         name: apptmp
       - emptyDir: {}

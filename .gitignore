@@ -2,6 +2,10 @@
 certs/
 debug/
 
+# local development
+local/
+config/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -22,7 +22,8 @@ RUN set -eux; \
     rm -f requirements.txt; \
     pip uninstall -y pipenv
 
-COPY whorf.py wsgi.py ./
+COPY wsgi.py ./
+COPY app ./app
 
 # create the app user
 RUN set -eux; \
