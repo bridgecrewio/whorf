@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 
 import yaml
 from checkov.common.bridgecrew.check_type import CheckType
@@ -37,7 +37,7 @@ def root() -> str:
 
 @webhook.route("/validate", methods=["POST"])
 def validate() -> Response:
-    request_info: "dict[str, Any]" = request.get_json()
+    request_info = cast("dict[str, Any]", request.get_json())
     webhook.logger.debug(json.dumps(request_info, indent=4))
 
     namespace = request_info["request"].get("namespace")
@@ -66,7 +66,7 @@ def validate() -> Response:
         return process_passed_checks(ckv_whorf=ckv_whorf, uid=uid, obj_kind_name=obj_kind_name)
 
 
-@scheduler.task("cron", id="scan", minute=whorf_conf.upload_interval_in_min)  # type:ignore[misc]
+@scheduler.task("cron", id="scan", minute=whorf_conf.upload_interval_in_min)
 def scan_periodic() -> None:
     webhook.logger.info(f"Start scanning directory {MANIFEST_ROOT_PATH}")
 

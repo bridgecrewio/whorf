@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, cast
 
 from checkov.common.bridgecrew.check_type import CheckType
 from checkov.common.bridgecrew.severities import BcSeverities
@@ -67,7 +67,7 @@ def process_failed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str)
         if report.check_type == CheckType.SCA_IMAGE:
             sca_message = collect_cves_and_license_violations(report=report)
 
-        issue_count += report.get_summary()["failed"]
+        issue_count += cast(int, report.get_summary()["failed"])
 
     message.append(f"Checkov found {issue_count} total issues in this manifest.")
     message.extend(sca_message)
