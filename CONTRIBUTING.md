@@ -1,6 +1,6 @@
 # Contributing
 
-The developer guide is for anyone wanting to contribute directly to the `whorf` project. 
+The developer guide is for anyone wanting to contribute directly to the `whorf` project.
 
 
 ## Work locally
@@ -15,17 +15,17 @@ Then you can deploy the Kubernetes manifest via the `setup.sh` script by leverag
 This will create a `local` folder with all the templates adjusted to given inputs.
 
 > **Note**
-> 
+>
 > If `minikube start` results in an error like this
 > ```shell
 > [kubelet-check] Initial timeout of 40s passed.
-> 
+>
 > Unfortunately, an error has occurred:
 > 	timed out waiting for the condition
-> 
+>
 > ...
 > ```
-> 
+>
 > then rerunning it with setting an older Kubernetes version may help
 > ```shell
 > minikube delete --all
@@ -37,7 +37,7 @@ This will create a `local` folder with all the templates adjusted to given input
 If you want to test your own version of the container image, then first build the image.
 
 > **Note**
-> 
+>
 > If `minikube` is used, then you need to reuse its built-in Docker daemon
 > ```shell
 > eval $(minikube docker-env)
@@ -69,7 +69,7 @@ kubectl apply -f local/deployment.yaml
 ```
 
 > **Note**
-> 
+>
 > If only the image itself changed, then you need to restart the deployment rollout
 > ```shell
 > kubectl rollout restart deploy validation-webhook -n bridgecrew
@@ -111,9 +111,9 @@ Checkov found 17 license violations in container images.
 Since the container image runs a Gunicorn web server with a Flask application you can just startup the Flask application locally and invoke the endpoint via `curl` or similar.
 
 > **Note**
-> 
+>
 > When using PyCharm Professional then you can  easily configure a [Flask Server run configuration](https://www.jetbrains.com/help/pycharm/run-debug-configuration-flask-server.html).
-> 
+>
 > When using PyCharm CE then you can use this run configuration and just need to adjust the `SCRIPT_NAME` to point it against your virtual env path
 > ```xml
 > <component name="ProjectRunConfigurationManager">
@@ -142,7 +142,7 @@ Since the container image runs a Gunicorn web server with a Flask application yo
 >     <option name="INPUT_FILE" value="" />
 >     <method v="2" />
 >   </configuration>
-> </component>   
+> </component>
 > ```
 
 Additionally, you need to add the config files for `checkov` and `whorf` to a local `config` folder.

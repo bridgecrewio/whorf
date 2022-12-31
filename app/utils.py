@@ -8,11 +8,11 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 import yaml
+from checkov.common.bridgecrew.wrapper import reduce_scan_reports
 from flask import current_app as webhook
 from flask import jsonify
 
-from checkov.common.bridgecrew.wrapper import reduce_scan_reports
-from app.consts import WHORF_CONFIG_PATH, MANIFEST_ROOT_PATH
+from app.consts import MANIFEST_ROOT_PATH, WHORF_CONFIG_PATH
 from app.models import WhorfConfig
 
 if TYPE_CHECKING:
@@ -20,7 +20,7 @@ if TYPE_CHECKING:
     from flask import Response
 
 
-def admission_response(allowed: bool, uid: str, message: str) -> Response:
+def admission_response(*, allowed: bool, uid: str, message: str) -> Response:
     return jsonify(
         {
             "apiVersion": "admission.k8s.io/v1",
@@ -45,7 +45,7 @@ def get_whorf_config() -> WhorfConfig:
 
     return WhorfConfig(
         ignores_namespaces=whorf_conf.get("ignores-namespaces") or [],
-        upload_interval_in_min=f"*/{whorf_conf.get('upload-interval-in-min') or 5}"
+        upload_interval_in_min=f"*/{whorf_conf.get('upload-interval-in-min') or 5}",
     )
 
 
@@ -90,7 +90,7 @@ def cleanup_directory(path: Path) -> None:
             webhook.logger.error(f"Failed to delete {entry}", exc_info=True)
 
 
-def check_debug_mode(request_info: dict[str, Any], uid: str, scan_reports: list[Report]):
+def check_debug_mode(request_info: dict[str, Any], uid: str, scan_reports: list[Report]) -> None:
     # check the debug env.  If 'yes' we don't delete the evidence of the scan.  Just in case it's misbehaving.
     # to active add an env DEBUG:yes to the deployment manifest
     debug = os.getenv("DEBUG")

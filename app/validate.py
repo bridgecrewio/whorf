@@ -13,6 +13,7 @@ from app.utils import admission_response
 if TYPE_CHECKING:
     from checkov.common.output.report import Report
     from flask import Response
+
     from app.models import CheckovWhorf
 
 
@@ -26,11 +27,12 @@ def process_passed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str)
         if report.check_type == CheckType.SCA_IMAGE:
             sca_message = collect_cves_and_license_violations(report=report)
 
-    message.append(f"Checkov found 0 total issues in this manifest.")
+    message.append("Checkov found 0 total issues in this manifest.")
     message.extend(sca_message)
 
     webhook.logger.info(f"Object {obj_kind_name} passed security checks. Allowing the request.")
     return admission_response(allowed=True, uid=uid, message="\n".join(message))
+
 
 def process_failed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str) -> Response:
     """Invoked when Kubernetes related issues were found"""

@@ -42,14 +42,14 @@ spec:
           exec:
             command:
               - /bin/sh
-              - -c 
+              - -c
               - "pidof -x gunicorn"
         livenessProbe:
           initialDelaySeconds: 30
           exec:
             command:
               - /bin/sh
-              - -c 
+              - -c
               - "pidof -x gunicorn"
         ports:
         - containerPort: 8443
@@ -57,12 +57,12 @@ spec:
         - name: BC_SOURCE
           value: admissionController
         - name: CKV_GITHUB_CONFIG_FETCH_DATA
-          value: "False"     
+          value: "False"
         - name: DEBUG
           valueFrom:
             configMapKeyRef:
               name: whorfconfig # The ConfigMap this value comes from.
-              key: debug        # Are we in debug mode?                     
+              key: debug        # Are we in debug mode?
         volumeMounts:
         - name: bridgecrew-secret
           readOnly: true
@@ -71,7 +71,7 @@ spec:
           readOnly: true
           mountPath: "/certs"
         - name: "config"
-          mountPath: "/app/config"          
+          mountPath: "/app/config"
         - name: "apptmp"
           mountPath: "/app/tmp"
         - name: "tmp"

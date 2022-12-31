@@ -12,7 +12,7 @@ webhooks:
     namespaceSelector:
       matchExpressions:
       - key: whorf.ignore
-        operator: DoesNotExist    
+        operator: DoesNotExist
     rules:
       - apiGroups: ["*"]
         resources:

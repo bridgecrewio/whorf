@@ -52,7 +52,7 @@ kubectl create ns $ns --dry-run=client -o yaml | sed  '/^metadata:/p; s/^metadat
 
 # the cluster (repository name)
 cluster=$1
-# the bridgecrew platform api key 
+# the bridgecrew platform api key
 bcapikey=$2
 
 # Generate keys into a temporary directory.
@@ -79,7 +79,7 @@ sed -e 's@${CA_PEM_B64}@'"$ca_pem_b64"'@g' "${certdir}/admissionconfiguration.ya
 sed -e 's@cluster@'"$cluster"'@g' "${certdir}/checkovconfig.yaml"  > "${k8sdir}/checkovconfig.yaml"
 
 # Apply everything in the bridgecrew directory in the correct order
-kubectl apply -f $k8sdir/namespace.yaml 
+kubectl apply -f $k8sdir/namespace.yaml
 kubectl apply -f $k8sdir/secret-apikey.yaml
 kubectl apply -f $k8sdir/secret.yaml
 kubectl apply -f $k8sdir/checkovconfig.yaml

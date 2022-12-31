@@ -4,7 +4,7 @@ metadata:
   name: whorfconfig
   namespace: bridgecrew
 data:
-  # debug will save the parsed manifests to the file system for later inspection 
+  # debug will save the parsed manifests to the file system for later inspection
   debug: "no"
   # whorf specific config
   whorf.yaml: |

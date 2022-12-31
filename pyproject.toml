@@ -1,2 +1,36 @@
 [tool.black]
 line-length = 120
+
+[tool.mypy]
+files = "app"
+strict = true
+pretty = true
+show_error_codes = true
+
+[tool.ruff]
+line-length = 120
+
+select = [
+    "A",
+    "ARG",
+    "B",
+    "C4",
+    "E",
+    "F",
+    "FBT",
+    "I",
+    "N",
+    "PGH",
+    "RUF",
+    "S",
+    "SIM",
+    "T10",
+    "T20",
+    "UP",
+    "W",
+    "YTT",
+]
+ignore = ["ARG002", "E501"]
+per-file-ignores = { "tests/**/*" = ["S101"] }
+
+target-version = "py310"

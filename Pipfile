@@ -11,8 +11,11 @@ python-dotenv = "==0.21.0"
 gunicorn = "==20.1.0"
 
 [dev-packages]
+mypy = "*"
+pre-commit = "*"
 pytest = "*"
 pytest-mock = "*"
+types-pyyaml = "*"
 
 [requires]
 python_version = "3.10"

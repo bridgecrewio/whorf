@@ -5,16 +5,17 @@ from logging import Logger
 from typing import TYPE_CHECKING, Literal
 
 import yaml
+from checkov.kubernetes.runner import Runner as K8sRunner
+from checkov.main import Checkov
+from checkov.sca_image.runner import Runner as ScaImageRunner
 
 from app.consts import CHECKOV_CONFIG_PATH
-from checkov.main import Checkov
-from checkov.kubernetes.runner import Runner as k8s_runner
-from checkov.sca_image.runner import Runner as sca_image_runner
 
 if TYPE_CHECKING:
     from checkov.common.output.baseline import Baseline
     from checkov.common.runners.runner_registry import RunnerRegistry
     from flask import Flask
+
 
 class CheckovWhorf(Checkov):
     def __init__(self, logger: Logger, argv: list[str]) -> None:
@@ -22,11 +23,11 @@ class CheckovWhorf(Checkov):
 
         self.logger = logger
 
-    def _reset_runners(self):
+    def _reset_runners(self) -> None:
         # need to reinitialize the list of runners to reset instance attributes
         self.runners = [
-            k8s_runner(),
-            sca_image_runner(),
+            K8sRunner(),
+            ScaImageRunner(),
         ]
 
     def upload_results(

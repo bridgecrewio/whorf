@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 import json
 from pathlib import Path
+from typing import TYPE_CHECKING, Any
 
 import pytest
 from pytest_mock import MockerFixture
@@ -7,9 +10,12 @@ from pytest_mock import MockerFixture
 import app.models
 import app.utils
 
+if TYPE_CHECKING:
+    from flask.testing import FlaskClient
+
 
 @pytest.fixture()
-def client(mocker: MockerFixture, tmp_path: Path):
+def client(mocker: MockerFixture, tmp_path: Path) -> FlaskClient:
     checkov_conf_path = tmp_path / ".checkov.yaml"
     checkov_conf_path.write_text("framework: kubernetes")
     whorf_conf_path = tmp_path / "whorf.yaml"
@@ -24,11 +30,11 @@ def client(mocker: MockerFixture, tmp_path: Path):
 
 
 @pytest.fixture()
-def request_info():
+def request_info() -> dict[str, Any]:
     return json.loads((Path(__file__).parent / "request.json").read_text())
 
 
-def test_validate(client, request_info):
+def test_validate(client: FlaskClient, request_info) -> None:
     # when
     response = client.post("/validate", json=request_info)
 

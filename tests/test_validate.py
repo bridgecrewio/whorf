@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 
 from checkov.common.bridgecrew.check_type import CheckType
@@ -6,14 +8,14 @@ from checkov.common.output.report import Report
 from app.consts import DEFAULT_CHECKOV_ARGS
 from app.models import CheckovWhorf
 from app.validate import (
-    process_passed_checks,
-    process_failed_checks,
     collect_cves_and_license_violations,
+    process_failed_checks,
+    process_passed_checks,
     validate_k8s_request,
 )
 
 
-def test_process_passed_checks(webhook):
+def test_process_passed_checks(webhook) -> None:
     #  given
     ckv_whorf = CheckovWhorf(logger=logging.getLogger(), argv=DEFAULT_CHECKOV_ARGS)
 
@@ -35,7 +37,7 @@ def test_process_passed_checks(webhook):
     }
 
 
-def test_process_failed_checks(webhook, license_record, package_record):
+def test_process_failed_checks(webhook, license_record, package_record) -> None:
     #  given
     ckv_whorf = CheckovWhorf(logger=logging.getLogger(), argv=DEFAULT_CHECKOV_ARGS)
 
@@ -71,7 +73,7 @@ def test_process_failed_checks(webhook, license_record, package_record):
     }
 
 
-def test_collect_cves_and_license_violations(webhook, license_record, package_record):
+def test_collect_cves_and_license_violations(webhook, license_record, package_record) -> None:
     #  given
     report = Report(check_type=CheckType.SCA_IMAGE)
     report.add_record(license_record)
@@ -88,7 +90,7 @@ def test_collect_cves_and_license_violations(webhook, license_record, package_re
     ]
 
 
-def test_validate_k8s_request(webhook):
+def test_validate_k8s_request(webhook) -> None:
     # given
     namespace = "my-namespace"
     uid = "13b390aa-ea59-48ef-9fb8-069bf0430dce"
@@ -101,7 +103,7 @@ def test_validate_k8s_request(webhook):
     assert response is None
 
 
-def test_validate_k8s_request_with_invalid_uid(webhook):
+def test_validate_k8s_request_with_invalid_uid(webhook) -> None:
     # given
     namespace = "my-namespace"
     uid = "invalid"
@@ -122,7 +124,7 @@ def test_validate_k8s_request_with_invalid_uid(webhook):
     }
 
 
-def test_validate_k8s_request_with_ignore_namespace(webhook):
+def test_validate_k8s_request_with_ignore_namespace(webhook) -> None:
     # given
     namespace = "default"
     uid = "13b390aa-ea59-48ef-9fb8-069bf0430dce"

@@ -34,8 +34,8 @@ jobs:
         run: |
           version=$(curl -s curl -s https://api.github.com/repos/bridgecrewio/checkov/tags | jq -r '.[0].name')
           echo "version=$version" >> $GITHUB_OUTPUT
-          
-          # grab major version for later image tag usage         
+
+          # grab major version for later image tag usage
           major_version=$(echo "${version}" | head -c1)
           echo "major_version=$major_version" >> $GITHUB_OUTPUT
       - name: Update checkov dependency
@@ -119,7 +119,7 @@ jobs:
           # sign image
           cosign sign ${{ env.DH_IMAGE_NAME }}@${{ steps.docker_push.outputs.digest }}
           cosign sign -f ${{ env.GHCR_IMAGE_NAME }}@${{ steps.docker_push.outputs.digest }}
-          
+
           # attest SBOM
           cosign attest \
             --type cyclonedx \

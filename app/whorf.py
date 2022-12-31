@@ -1,16 +1,20 @@
 from __future__ import annotations
 
 import json
+from typing import TYPE_CHECKING, Any
 
+import yaml
 from checkov.common.bridgecrew.check_type import CheckType
 from flask import Flask, request
 from flask_apscheduler import APScheduler
-import yaml
 
-from app.consts import LOG_LEVEL, MANIFEST_ROOT_PATH, DEFAULT_CHECKOV_ARGS
+from app.consts import DEFAULT_CHECKOV_ARGS, LOG_LEVEL, MANIFEST_ROOT_PATH
 from app.models import CheckovWhorf
-from app.utils import to_dict, get_whorf_config, cleanup_directory, check_debug_mode
+from app.utils import check_debug_mode, cleanup_directory, get_whorf_config, to_dict
 from app.validate import process_failed_checks, process_passed_checks, validate_k8s_request
+
+if TYPE_CHECKING:
+    from flask import Response
 
 webhook = Flask(__name__)
 webhook.logger.setLevel(LOG_LEVEL)
@@ -27,13 +31,13 @@ whorf_conf.init_app(webhook)
 
 
 @webhook.route("/", methods=["GET"])
-def root():
+def root() -> str:
     return "<h1 style='color:blue'>Ready!</h1>"
 
 
 @webhook.route("/validate", methods=["POST"])
-def validate():
-    request_info = request.get_json()
+def validate() -> Response:
+    request_info: "dict[str, Any]" = request.get_json()
     webhook.logger.debug(json.dumps(request_info, indent=4))
 
     namespace = request_info["request"].get("namespace")
@@ -62,14 +66,10 @@ def validate():
         return process_passed_checks(ckv_whorf=ckv_whorf, uid=uid, obj_kind_name=obj_kind_name)
 
 
-@scheduler.task("cron", id="scan", minute=whorf_conf.upload_interval_in_min)
-def scan_periodic():
+@scheduler.task("cron", id="scan", minute=whorf_conf.upload_interval_in_min)  # type:ignore[misc]
+def scan_periodic() -> None:
     webhook.logger.info(f"Start scanning directory {MANIFEST_ROOT_PATH}")
 
     ckv_whorf.scan_directory(str(MANIFEST_ROOT_PATH))
 
     cleanup_directory(MANIFEST_ROOT_PATH)
-
-
-if __name__ == "__main__":
-    webhook.run(host="0.0.0.0", port=1701)
