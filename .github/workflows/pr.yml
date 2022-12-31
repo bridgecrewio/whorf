@@ -34,7 +34,7 @@ jobs:
         pipenv install --dev
     - name: Run Mypy
       run: |
-        pipenv run mypy        
+        pipenv run mypy
 
   unit-tests:
     timeout-minutes: 5
