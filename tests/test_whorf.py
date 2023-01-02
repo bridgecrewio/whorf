@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Any
 import pytest
 from pytest_mock import MockerFixture
 
-import app.models
+import app.checkov_whorf
 import app.utils
 
 if TYPE_CHECKING:
@@ -21,7 +21,7 @@ def client(mocker: MockerFixture, tmp_path: Path) -> FlaskClient:
     whorf_conf_path = tmp_path / "whorf.yaml"
     whorf_conf_path.write_text("ignores-namespaces:\n - default")
 
-    mocker.patch.object(app.models, "CHECKOV_CONFIG_PATH", checkov_conf_path)
+    mocker.patch.object(app.checkov_whorf, "CHECKOV_CONFIG_PATH", checkov_conf_path)
     mocker.patch.object(app.utils, "WHORF_CONFIG_PATH", whorf_conf_path)
 
     from app.whorf import webhook

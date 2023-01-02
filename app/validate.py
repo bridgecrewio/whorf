@@ -14,20 +14,36 @@ if TYPE_CHECKING:
     from checkov.common.output.report import Report
     from flask import Response
 
-    from app.models import CheckovWhorf
+    from app.checkov_whorf import CheckovWhorf
+
+
+def validate_k8s_request(namespace: str, uid: str) -> Response | None:
+    # Check/Sanitise UID to make sure it's a k8s request and only a k8s request as it is used for file naming
+    if re.match(UUID_PATTERN, uid):
+        webhook.logger.info("Valid UID Found, continuing")
+    else:
+        message = "Invalid UID. Aborting validation"
+        webhook.logger.error("K8s UID failed security checks. Request rejected!")
+        return admission_response(allowed=False, uid=uid, message=message)
+
+    # check we're not in a system namespace
+    if namespace in webhook.extensions["whorf"].ignores_namespaces:
+        message = "Namespace in ignore list. Ignoring validation"
+        webhook.logger.error("Namespace in ignore list. Ignoring validation!")
+        return admission_response(allowed=True, uid=uid, message=message)
+
+    return None
 
 
 def process_passed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str) -> Response:
     """Invoked when no Kubernetes related issues were found"""
 
     message = []
-    sca_message = []
 
-    for report in ckv_whorf.scan_reports:
-        if report.check_type == CheckType.SCA_IMAGE:
-            sca_message = collect_cves_and_license_violations(report=report)
+    k8s_message = generate_k8s_output(reports=ckv_whorf.scan_reports)
+    message.extend(k8s_message)
 
-    message.append("Checkov found 0 total issues in this manifest.")
+    sca_message = generate_sca_output(reports=ckv_whorf.scan_reports)
     message.extend(sca_message)
 
     webhook.logger.info(f"Object {obj_kind_name} passed security checks. Allowing the request.")
@@ -38,7 +54,6 @@ def process_failed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str)
     """Invoked when Kubernetes related issues were found"""
 
     message = []
-    sca_message = []
 
     if ckv_whorf.config.hard_fail_on:
         hard_fails = {}
@@ -62,22 +77,36 @@ def process_failed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str)
             for ckv in hard_fails:
                 message.append(f"{ckv}:{hard_fails[ckv]}")
 
-    issue_count = 0
-    for report in ckv_whorf.scan_reports:
-        if report.check_type == CheckType.SCA_IMAGE:
-            sca_message = collect_cves_and_license_violations(report=report)
+    k8s_message = generate_k8s_output(reports=ckv_whorf.scan_reports)
+    message.extend(k8s_message)
 
-        issue_count += cast(int, report.get_summary()["failed"])
-
-    message.append(f"Checkov found {issue_count} total issues in this manifest.")
+    sca_message = generate_sca_output(reports=ckv_whorf.scan_reports)
     message.extend(sca_message)
 
     webhook.logger.error(f"Object {obj_kind_name} failed security checks. Request rejected!")
     return admission_response(allowed=False, uid=uid, message="\n".join(message))
 
 
-def collect_cves_and_license_violations(report: Report) -> list[str]:
+def generate_k8s_output(reports: list[Report]) -> list[str]:
+    """Counts the failed checks to generate a message output"""
+
+    k8s_report = next((report for report in reports if report.check_type == CheckType.KUBERNETES), None)
+    if not k8s_report:
+        return []
+
+    issue_count = cast(int, k8s_report.get_summary()["failed"])
+
+    message = [f"Checkov found {issue_count} total issues in this manifest."]
+
+    return message
+
+
+def generate_sca_output(reports: list[Report]) -> list[str]:
     """Extracts the CVEs and License violations to generate a message output"""
+
+    sca_image_report = next((report for report in reports if report.check_type == CheckType.SCA_IMAGE), None)
+    if not sca_image_report:
+        return []
 
     license_count = 0
     cve_count = 0
@@ -88,7 +117,7 @@ def collect_cves_and_license_violations(report: Report) -> list[str]:
         BcSeverities.LOW: 0,
     }
 
-    for check in report.failed_checks:  # TODO: differentiate between different images
+    for check in sca_image_report.failed_checks:  # TODO: differentiate between different images
         if check.check_id.startswith("BC_LIC_"):
             license_count += 1
         elif check.check_id.startswith("BC_VUL_"):
@@ -107,21 +136,3 @@ def collect_cves_and_license_violations(report: Report) -> list[str]:
     ]
 
     return message
-
-
-def validate_k8s_request(namespace: str, uid: str) -> Response | None:
-    # Check/Sanitise UID to make sure it's a k8s request and only a k8s request as it is used for file naming
-    if re.match(UUID_PATTERN, uid):
-        webhook.logger.info("Valid UID Found, continuing")
-    else:
-        message = "Invalid UID. Aborting validation"
-        webhook.logger.error("K8s UID failed security checks. Request rejected!")
-        return admission_response(allowed=False, uid=uid, message=message)
-
-    # check we're not in a system namespace
-    if namespace in webhook.extensions["whorf"].ignores_namespaces:
-        message = "Namespace in ignore list. Ignoring validation"
-        webhook.logger.error("Namespace in ignore list. Ignoring validation!")
-        return admission_response(allowed=True, uid=uid, message=message)
-
-    return None

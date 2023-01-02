@@ -5,10 +5,10 @@ import logging
 from checkov.common.bridgecrew.check_type import CheckType
 from checkov.common.output.report import Report
 
+from app.checkov_whorf import CheckovWhorf
 from app.consts import DEFAULT_CHECKOV_ARGS
-from app.models import CheckovWhorf
 from app.validate import (
-    collect_cves_and_license_violations,
+    generate_sca_output,
     process_failed_checks,
     process_passed_checks,
     validate_k8s_request,
@@ -18,6 +18,9 @@ from app.validate import (
 def test_process_passed_checks(webhook) -> None:
     #  given
     ckv_whorf = CheckovWhorf(logger=logging.getLogger(), argv=DEFAULT_CHECKOV_ARGS)
+
+    report = Report(check_type=CheckType.KUBERNETES)
+    ckv_whorf.scan_reports = [report]
 
     # when
     with webhook.app_context():
@@ -37,14 +40,17 @@ def test_process_passed_checks(webhook) -> None:
     }
 
 
-def test_process_failed_checks(webhook, license_record, package_record) -> None:
+def test_process_failed_checks(webhook, k8s_record, license_record, package_record) -> None:
     #  given
     ckv_whorf = CheckovWhorf(logger=logging.getLogger(), argv=DEFAULT_CHECKOV_ARGS)
 
-    report = Report(check_type=CheckType.SCA_IMAGE)
-    report.add_record(license_record)
-    report.add_record(package_record)
-    ckv_whorf.scan_reports = [report]
+    k8s_report = Report(check_type=CheckType.KUBERNETES)
+    k8s_report.add_record(k8s_record)
+    sca_report = Report(check_type=CheckType.SCA_IMAGE)
+    sca_report.add_record(license_record)
+    sca_report.add_record(package_record)
+
+    ckv_whorf.scan_reports = [k8s_report, sca_report]
 
     # when
     with webhook.app_context():
@@ -62,7 +68,7 @@ def test_process_failed_checks(webhook, license_record, package_record) -> None:
                 "code": 403,
                 "message": "\n".join(
                     [
-                        "Checkov found 2 total issues in this manifest.",
+                        "Checkov found 1 total issues in this manifest.",
                         "Checkov found 1 CVEs in container images of which are 1 critical, 0 high, 0 medium and 0 low.",
                         "Checkov found 1 license violations in container images.",
                     ]
@@ -73,7 +79,7 @@ def test_process_failed_checks(webhook, license_record, package_record) -> None:
     }
 
 
-def test_collect_cves_and_license_violations(webhook, license_record, package_record) -> None:
+def test_generate_sca_output(webhook, license_record, package_record) -> None:
     #  given
     report = Report(check_type=CheckType.SCA_IMAGE)
     report.add_record(license_record)
@@ -81,7 +87,7 @@ def test_collect_cves_and_license_violations(webhook, license_record, package_re
 
     # when
     with webhook.app_context():
-        message = collect_cves_and_license_violations(report=report)
+        message = generate_sca_output(reports=[report])
 
     # then
     assert message == [

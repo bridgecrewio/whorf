@@ -8,8 +8,8 @@ from checkov.common.bridgecrew.check_type import CheckType
 from flask import Flask, request
 from flask_apscheduler import APScheduler
 
+from app.checkov_whorf import CheckovWhorf
 from app.consts import DEFAULT_CHECKOV_ARGS, LOG_LEVEL, MANIFEST_ROOT_PATH
-from app.models import CheckovWhorf
 from app.utils import check_debug_mode, cleanup_directory, get_whorf_config, to_dict
 from app.validate import process_failed_checks, process_passed_checks, validate_k8s_request
 
