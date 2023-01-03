@@ -28,7 +28,7 @@ def admission_response(*, allowed: bool, uid: str, message: str) -> Response:
             "response": {
                 "allowed": allowed,
                 "uid": uid,
-                "status": {"code": 403, "message": message},
+                "status": {"code": 200 if allowed else 403, "message": message},
             },
         }
     )
