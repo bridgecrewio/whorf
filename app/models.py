@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 @dataclass
 class WhorfConfig:
     ignores_namespaces: list[str]  # a list of namespaces to ignore requests from
-    upload_interval_in_min: str = "*/5"  # every 5 minutes
+    upload_interval_in_min: str = "*/30"  # every 30 minutes
 
     def init_app(self, app: Flask) -> None:
         """Register whorf config to a Flask application instance"""

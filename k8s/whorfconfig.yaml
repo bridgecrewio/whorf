@@ -86,4 +86,4 @@ data:
       - openshift-user-workload-monitoring
       - openshift-vsphere-infra
       - vpa
-    upload-interval-in-min: 5
+    upload-interval-in-min: 30

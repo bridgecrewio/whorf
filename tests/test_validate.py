@@ -34,7 +34,7 @@ def test_process_passed_checks(webhook) -> None:
         "kind": "AdmissionReview",
         "response": {
             "allowed": True,
-            "status": {"code": 403, "message": "Checkov found 0 total issues in this manifest."},
+            "status": {"code": 200, "message": "Checkov found 0 total issues in this manifest."},
             "uid": "13b390aa-ea59-48ef-9fb8-069bf0430dce",
         },
     }
@@ -145,7 +145,7 @@ def test_validate_k8s_request_with_ignore_namespace(webhook) -> None:
         "kind": "AdmissionReview",
         "response": {
             "allowed": True,
-            "status": {"code": 403, "message": "Namespace in ignore list. Ignoring validation"},
+            "status": {"code": 200, "message": "Namespace in ignore list. Ignoring validation"},
             "uid": "13b390aa-ea59-48ef-9fb8-069bf0430dce",
         },
     }
