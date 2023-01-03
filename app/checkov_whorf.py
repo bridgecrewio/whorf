@@ -3,9 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Literal
 
 import yaml
-from checkov.kubernetes.runner import Runner as K8sRunner
 from checkov.main import Checkov
-from checkov.sca_image.runner import Runner as ScaImageRunner
 
 from app.consts import CHECKOV_CONFIG_PATH
 
@@ -21,13 +19,6 @@ class CheckovWhorf(Checkov):
         super().__init__(argv=argv)
 
         self.logger = logger
-
-    def _reset_runners(self) -> None:
-        # need to reinitialize the list of runners to reset instance attributes
-        self.runners = [
-            K8sRunner(),
-            ScaImageRunner(),
-        ]
 
     def upload_results(
         self,
@@ -70,7 +61,6 @@ class CheckovWhorf(Checkov):
         """Scan the given file"""
 
         self.config.file = [file]
-        self._reset_runners()
         self.run()
 
         self.logger.info(f"Successfully scanned file {file}")
@@ -79,7 +69,6 @@ class CheckovWhorf(Checkov):
         """Scan the given directory"""
 
         self.config.directory = [directory]
-        self._reset_runners()
         self.run()
         self.upload_results_periodically(root_folder=directory)
 
