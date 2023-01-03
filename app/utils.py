@@ -92,7 +92,7 @@ def cleanup_directory(path: Path) -> None:
 
 def check_debug_mode(request_info: dict[str, Any], uid: str, scan_reports: list[Report]) -> None:
     # check the debug env.  If 'yes' we don't delete the evidence of the scan.  Just in case it's misbehaving.
-    # to active add an env DEBUG:yes to the deployment manifest
+    # to activate add an env DEBUG:yes to the deployment manifest
     debug = os.getenv("DEBUG")
     if isinstance(debug, str) and debug.lower() == "yes":
         # write original request and scan report to file system
