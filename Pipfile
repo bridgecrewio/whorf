@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-checkov = "==2.2.232"
+checkov = "==2.2.233"
 click = "==8.0.1"
 colorama = "==0.4.4"
 flask = "==2.0.1"
