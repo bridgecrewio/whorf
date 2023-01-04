@@ -1,7 +1,7 @@
 # Whorf
 A K8s admission controller for security and operational best practices (Based on [Checkov](https://checkov.io))
 
-Whorf is your last line of defence against deploying vulnerable or misconfigured kubernetes objects.  
+Whorf is your last line of defence against deploying vulnerable or misconfigured kubernetes objects.
 
 ## Install
 It is easily deployed by simply running the setup.sh script.  This will download the default kubernetes objects into a local bridgecrew directory.  It will customise to your local requirements and deploy into the kubernetes cluster currently in context
@@ -30,7 +30,7 @@ kubectl delete -f bridgecrew<timestamp>
 ## Customisation of Checks for Validation
 After installation the check which would block a kubernetes object from being deployed are created and deployed as a kubernetes ConfigMap.
 
-The default checks are only a small subset of the entire kubernetes range focusing only on root and privileged access and capabilities.  
+The default checks are only a small subset of the entire kubernetes range focusing only on root and privileged access and capabilities.
 
 These can be found in the file checkovconfig.yaml.  The default example is below where k8sac/cluster would be replaced with k8sac/'your cluster name'
 
