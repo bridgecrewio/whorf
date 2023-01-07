@@ -20,3 +20,8 @@ repos:
       - id: ruff
         args:
           - --fix
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.6.22
+    hooks:
+      - id: actionlint-docker
+        args: ["-ignore", "context \"env\" is not allowed here."]
