@@ -12,11 +12,11 @@ jobs:
   lint:
     uses: bridgecrewio/gha-reusable-workflows/.github/workflows/pre-commit.yaml@main
     with:
-      python-version: ${{ env.MIN_PYTHON_VERSION }}
+      python-version: "3.10"  # can't leverage env vars here
   mypy:
     uses: bridgecrewio/gha-reusable-workflows/.github/workflows/mypy.yaml@main
     with:
-      python-version: ${{ env.MIN_PYTHON_VERSION }}
+      python-version: "3.10"  # can't leverage env vars here
 
   unit-tests:
     timeout-minutes: 5
