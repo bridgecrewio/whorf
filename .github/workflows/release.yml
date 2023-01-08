@@ -33,11 +33,11 @@ jobs:
         id: version
         run: |
           version=$(curl -s curl -s https://api.github.com/repos/bridgecrewio/checkov/tags | jq -r '.[0].name')
-          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
           # grab major version for later image tag usage
           major_version=$(echo "${version}" | head -c1)
-          echo "major_version=$major_version" >> $GITHUB_OUTPUT
+          echo "major_version=$major_version" >> "$GITHUB_OUTPUT"
       - name: Update checkov dependency
         run: |
           # install needed tools
