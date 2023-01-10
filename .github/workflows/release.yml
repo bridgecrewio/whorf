@@ -7,8 +7,11 @@ on:
     branches:
       - main
     paths-ignore:
+      - "CONTRIBUTING.md"
       - "README.md"
       - ".github/**"
+      - ".gitignore"
+      - ".pre-commit-config.yaml"
 
 permissions: read-all
 
@@ -28,6 +31,8 @@ jobs:
       - uses: actions/setup-python@5ccb29d8773c3f3f653e1705f474dfaa8a06a912  # v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+          cache: "pipenv"
+          cache-dependency-path: "Pipfile.lock"
 
       - name: Get latest checkov version tag
         id: version
