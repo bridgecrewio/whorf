@@ -45,6 +45,6 @@ def test_validate(client: FlaskClient, request_info) -> None:
         "response": {
             "allowed": False,
             "uid": "13b390aa-ea59-48ef-9fb8-069bf0430dce",
-            "status": {"code": 403, "message": "Checkov found 15 total issues in this manifest."},
+            "status": {"code": 403, "message": "Checkov found 16 total issues in this manifest."},
         },
     }
