@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8753adf7960469af9bf44e627d70fed4de13c778fa931fff97ec9e936be48503"
+            "sha256": "80934c0e596694fd3bdaff4d056b8dee3d03fac69dd8db316d23d1df46c0ddff"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -198,19 +198,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:d68576dcb1c520474eafb64b996661068a369f40bbd104ccb9502cad71849e57",
-                "sha256:e8ae1567b0a21d410f9c8a16a17a8028445a52061482272b4a516f5de5abbd92"
+                "sha256:0ff8667fbfda8390cab2718a4d129374a6ddd6fd1913f79777fd4498f93c84f1",
+                "sha256:72214a08f337d29a1300d7861872f60ea41016b2a8ad8094fab20d783c8cf1ae"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.26.55"
+            "version": "==1.26.56"
         },
         "botocore": {
             "hashes": [
-                "sha256:5fe6b8809292bb178a9378fea4f96bc969003d1048cf6de8ad3c5a73690fefa9",
-                "sha256:dd8a0868b287015bed086c97b866f9bb8ca57737d15972d3ac773559f4088db8"
+                "sha256:669ed3a256c4352f8f8a77a24b4d623ab7acc966d843b460d7ce2261a9813a79",
+                "sha256:ca4d6403d745218270a20d9ca3ca9a33e3ad2fabb59a96ed8d6e1a824b274c86"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.29.55"
+            "version": "==1.29.56"
         },
         "cached-property": {
             "hashes": [
@@ -314,11 +314,11 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:ae2c5d5ca7bce9da29240e2855661bd2515a27520915a6543976067f2a03d981",
-                "sha256:df0a839df45dc62d8506717d2f07a61bd1086d163914285db2e1dd4c0937b3e0"
+                "sha256:67136f0d50bcd77f3347926d87e7ccbffddbed42385b4c7073202c03a6b2c884",
+                "sha256:83bda749ab4cafb784e5043fdff746986e89136e8acbba490aac9724741965d4"
             ],
             "index": "pypi",
-            "version": "==2.2.299"
+            "version": "==2.2.301"
         },
         "click": {
             "hashes": [
@@ -633,6 +633,7 @@
         },
         "junit-xml": {
             "hashes": [
+                "sha256:de16a051990d4e25a3982b2dd9e89d671067548718866416faec14d9de56db9f",
                 "sha256:ec5ca1a55aefdd76d28fcc0b135251d156c7106fa979686a4b48d62b761b4732"
             ],
             "version": "==1.9"
