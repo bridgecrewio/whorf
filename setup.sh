@@ -62,7 +62,7 @@ else
   curl -o "$k8sdir"/deployment.yaml $deployment
   curl -o "$k8sdir"/service.yaml $service
   curl -o "$k8sdir"/whorfconfig.yaml $whorfconfigmap
-  
+
   # Pop these into the temp directory as we'll make some customisations pipe in into the k8s dir
   curl -o "$certdir"/checkovconfig.yaml $configmap
   curl -o "$certdir"/admissionconfiguration.yaml $admissionregistration
@@ -119,4 +119,3 @@ fi
 echo "Waiting for deployment to be Ready..."
 kubectl wait --for=condition=Available deployment/validation-webhook --timeout=60s -n bridgecrew
 echo "The webhook server has been deployed and configured!"
-
