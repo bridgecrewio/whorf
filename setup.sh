@@ -3,8 +3,29 @@
 #
 # Sets up the files required to deploy the Bridgecrew Checkov admission controller in a cluster
 
+function Usage()
+{
+  echo "Illegal number of parameters, this script - $1"
+  echo "Syntax: ./setup.sh cluster [bcapikey]"
+}
+
+
+if [ "$#" -eq 0 ] || [ "$#" -gt 2 ]; then
+  Usage "$#"
+  exit 1
+fi
+
+# the cluster (repository name)
+cluster=$1
+
+if [ "$#" -eq 2 ]; then
+  # the Bridgecrew platform api key
+  bcapikey=$2
+fi
+
+
 whorf_local=false
-if [ ! -z "${WHORF_LOCAL}" ] && [ "${WHORF_LOCAL}" = "true" ]; then
+if [ -n "${WHORF_LOCAL}" ] && [ "${WHORF_LOCAL}" = "true" ]; then
   whorf_local=true
 fi
 
@@ -15,21 +36,21 @@ if $whorf_local ; then
   mkdir -p $k8sdir
 else
   date=$(date '+%Y%m%d%H%M%S')
-  echo $date
+  echo "$date"
 
   codedir=bridgecrew$date
-  mkdir $codedir
+  mkdir "$codedir"
   k8sdir="$(dirname "$0")/${codedir}"
 fi
 
 certdir="$(mktemp -d)"
 
 if $whorf_local ; then
-  cp k8s/deployment.yaml $k8sdir/
-  cp k8s/service.yaml $k8sdir/
-  cp k8s/whorfconfig.yaml $k8sdir/
-  cp k8s/checkovconfig.yaml $certdir/
-  cp k8s/admissionconfiguration.yaml $certdir/
+  cp k8s/deployment.yaml "$k8sdir"/
+  cp k8s/service.yaml "$k8sdir"/
+  cp k8s/whorfconfig.yaml "$k8sdir"/
+  cp k8s/checkovconfig.yaml "$k8sdir"/
+  cp k8s/admissionconfiguration.yaml "$k8sdir"/
 else
   # Get the files we need
   deployment=https://raw.githubusercontent.com/bridgecrewio/checkov/master/admissioncontroller/k8s/deployment.yaml
@@ -38,34 +59,30 @@ else
   service=https://raw.githubusercontent.com/bridgecrewio/checkov/master/admissioncontroller/k8s/service.yaml
   whorfconfigmap=https://raw.githubusercontent.com/bridgecrewio/checkov/master/admissioncontroller/k8s/whorfconfig.yaml
 
-  curl -o $k8sdir/deployment.yaml $deployment
-  curl -o $k8sdir/service.yaml $service
-  curl -o $k8sdir/whorfconfig.yaml $whorfconfigmap
+  curl -o "$k8sdir"/deployment.yaml $deployment
+  curl -o "$k8sdir"/service.yaml $service
+  curl -o "$k8sdir"/whorfconfig.yaml $whorfconfigmap
+  
   # Pop these into the temp directory as we'll make some customisations pipe in into the k8s dir
-  curl -o $certdir/checkovconfig.yaml $configmap
-  curl -o $certdir/admissionconfiguration.yaml $admissionregistration
+  curl -o "$certdir"/checkovconfig.yaml $configmap
+  curl -o "$certdir"/admissionconfiguration.yaml $admissionregistration
 fi
 
 # the namespace
 ns=bridgecrew
-kubectl create ns $ns --dry-run=client -o yaml | sed  '/^metadata:/p; s/^metadata:/  labels: {"whorf.ignore":"true"}/' > $k8sdir/namespace.yaml
-
-# the cluster (repository name)
-cluster=$1
-# the bridgecrew platform api key
-bcapikey=$2
+kubectl create ns $ns --dry-run=client -o yaml \
+  | sed  '/^metadata:/p; s/^metadata:/  labels: {"whorf.ignore":"true"}/' > "$k8sdir"/namespace.yaml
 
 # Generate keys into a temporary directory.
 echo "Generating TLS certs ..."
-openssl req -x509 -sha256 -newkey rsa:2048 -keyout $certdir/webhook.key -out $certdir/webhook.crt -days 1024 -nodes \
+openssl req -x509 -sha256 -newkey rsa:2048 -keyout "$certdir"/webhook.key -out "$certdir"/webhook.crt -days 1024 -nodes \
   -extensions SAN \
   -config <(cat /etc/ssl/openssl.cnf \
           <(printf "[SAN]\nsubjectAltName=DNS.1:validate.$ns.svc"))
 
-kubectl create secret generic admission-tls -n bridgecrew --type=Opaque --from-file=$certdir/webhook.key --from-file=$certdir/webhook.crt --dry-run=client -o yaml > $k8sdir/secret.yaml
+kubectl create secret generic admission-tls -n bridgecrew --type=Opaque --from-file="$certdir"/webhook.key \
+  --from-file="$certdir"/webhook.crt --dry-run=client -o yaml > "$k8sdir"/secret.yaml
 
-kubectl create secret generic bridgecrew-secret \
-   --from-literal=credentials=$bcapikey -n bridgecrew --dry-run=client -o yaml > $k8sdir/secret-apikey.yaml
 
 # Create the `bridgecrew` namespace.
 echo "Creating Kubernetes objects ..."
@@ -79,14 +96,19 @@ sed -e 's@${CA_PEM_B64}@'"$ca_pem_b64"'@g' "${certdir}/admissionconfiguration.ya
 sed -e 's@cluster@'"$cluster"'@g' "${certdir}/checkovconfig.yaml"  > "${k8sdir}/checkovconfig.yaml"
 
 # Apply everything in the bridgecrew directory in the correct order
-kubectl apply -f $k8sdir/namespace.yaml
-kubectl apply -f $k8sdir/secret-apikey.yaml
-kubectl apply -f $k8sdir/secret.yaml
-kubectl apply -f $k8sdir/checkovconfig.yaml
-kubectl apply -f $k8sdir/whorfconfig.yaml
-kubectl apply -f $k8sdir/service.yaml
-kubectl apply -f $k8sdir/deployment.yaml
-kubectl apply -f $k8sdir/admissionconfiguration.yaml
+kubectl apply -f "$k8sdir/namespace.yaml"
+kubectl apply -f "$k8sdir/secret.yaml"
+kubectl apply -f "$k8sdir/checkovconfig.yaml"
+kubectl apply -f "$k8sdir/whorfconfig.yaml"
+kubectl apply -f "$k8sdir/service.yaml"
+kubectl apply -f "$k8sdir/deployment.yaml"
+kubectl apply -f "$k8sdir/admissionconfiguration.yaml"
+
+if [ -z "$bcapikey" ]; then
+  kubectl create secret generic bridgecrew-secret \
+     --from-literal=credentials="$bcapikey" -n bridgecrew --dry-run=client -o yaml > "$k8sdir/secret-apikey.yaml"
+  kubectl apply -f "$k8sdir/secret-apikey.yaml"
+fi
 
 # Delete the key directory to prevent abuse (DO NOT USE THESE KEYS ANYWHERE ELSE).
 if ! $whorf_local ; then
@@ -97,3 +119,4 @@ fi
 echo "Waiting for deployment to be Ready..."
 kubectl wait --for=condition=Available deployment/validation-webhook --timeout=60s -n bridgecrew
 echo "The webhook server has been deployed and configured!"
+
