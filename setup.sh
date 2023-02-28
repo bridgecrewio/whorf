@@ -104,7 +104,7 @@ kubectl apply -f "$k8sdir/service.yaml"
 kubectl apply -f "$k8sdir/deployment.yaml"
 kubectl apply -f "$k8sdir/admissionconfiguration.yaml"
 
-if [ -z "$bcapikey" ]; then
+if [ -n "${bcapikey+x}" ]; then
   kubectl create secret generic bridgecrew-secret \
      --from-literal=credentials="$bcapikey" -n bridgecrew --dry-run=client -o yaml > "$k8sdir/secret-apikey.yaml"
   kubectl apply -f "$k8sdir/secret-apikey.yaml"
