@@ -5,6 +5,7 @@ debug/
 # local development
 local/
 config/
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -34,6 +35,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+bridgecrew*/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
