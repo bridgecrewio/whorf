@@ -27,7 +27,7 @@ jobs:
       version: ${{ steps.version.outputs.version }}
       major_version: ${{ steps.version.outputs.major_version }}
     steps:
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c  # v3
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f  # v3
       - uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435  # v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
@@ -71,7 +71,7 @@ jobs:
       FULL_IMAGE_TAG: ${{ needs.update-checkov.outputs.version }}
       SHORT_IMAGE_TAG: ${{ needs.update-checkov.outputs.major_version }}
     steps:
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c  # v3
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f  # v3
         with:
           ref: main
       - uses: sigstore/cosign-installer@9becc617647dfa20ae7b1151972e9b3a2c338a2b  # v2
