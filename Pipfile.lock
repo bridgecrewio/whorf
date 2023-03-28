@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bb2b5aa0bfe2ce3984979797cb10a0749e6d3001bbf6a42110716a5f5c758c24"
+            "sha256": "333ebcb2937612dcb0c0b97b99d3f55e3fb382d0fb279896725fbb90930808e2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -387,11 +387,10 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:670f7fbb9432b807db53e210393bb583e9d81c9818cd028d523c9fafc02a71d2",
-                "sha256:98fdfdcf63cb4c8cda88afb913b3fd18797ed324c173a4b845aee0627e76fe47"
+                "sha256:c48c6c140070147c51ffe64c0be7cbac13973cbd5edb98c1b68087f8ec990dda"
             ],
             "index": "pypi",
-            "version": "==2.3.126"
+            "version": "==2.3.127"
         },
         "click": {
             "hashes": [
@@ -1242,11 +1241,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077",
-                "sha256:b78aaa36f6b90a074c1fa651168723acbf45d14cb1196b6f02c0fd07f17623b2"
+                "sha256:257de92a9d50a60b8e22abfcbb771571fde0dbf3ec234463212027a4eeecbe9a",
+                "sha256:e728ca814a823bf7bf60162daf9db95b93d532948c4c0bea762ce62f60189078"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.6.0"
+            "version": "==67.6.1"
         },
         "six": {
             "hashes": [
@@ -1676,11 +1675,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077",
-                "sha256:b78aaa36f6b90a074c1fa651168723acbf45d14cb1196b6f02c0fd07f17623b2"
+                "sha256:257de92a9d50a60b8e22abfcbb771571fde0dbf3ec234463212027a4eeecbe9a",
+                "sha256:e728ca814a823bf7bf60162daf9db95b93d532948c4c0bea762ce62f60189078"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.6.0"
+            "version": "==67.6.1"
         },
         "tomli": {
             "hashes": [
