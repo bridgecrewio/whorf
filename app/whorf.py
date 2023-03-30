@@ -69,7 +69,7 @@ def validate() -> Response:
 def scan_periodic() -> None:
     webhook.logger.info(f"Start scanning directory {MANIFEST_ROOT_PATH}")
 
-    ckv_whorf = CheckovWhorf(logger=webhook.logger, argv=DEFAULT_CHECKOV_ARGS, should_upload_results=True)
+    ckv_whorf = CheckovWhorf(logger=webhook.logger, argv=DEFAULT_CHECKOV_ARGS)
     ckv_whorf.update_config()
     ckv_whorf.scan_directory(str(MANIFEST_ROOT_PATH))
 
