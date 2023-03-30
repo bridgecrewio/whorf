@@ -15,9 +15,10 @@ if TYPE_CHECKING:
 
 
 class CheckovWhorf(Checkov):
-    def __init__(self, logger: Logger, argv: list[str]) -> None:
+    def __init__(self, logger: Logger, argv: list[str], should_upload_results: bool = False) -> None:
         super().__init__(argv=argv)
 
+        self.should_upload_results = should_upload_results
         self.logger = logger
 
     def upload_results(
@@ -28,7 +29,14 @@ class CheckovWhorf(Checkov):
         included_paths: list[str] | None = None,
         git_configuration_folders: list[str] | None = None,
     ) -> None:
-        # don't upload results with every run
+        if self.should_upload_results:
+            super().upload_results(
+                root_folder=root_folder,
+                files=files,
+                excluded_paths=excluded_paths,
+                included_paths=included_paths,
+                git_configuration_folders=git_configuration_folders
+            )
         return
 
     def upload_results_periodically(self, root_folder: str) -> None:
