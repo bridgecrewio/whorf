@@ -1,13 +1,11 @@
 from __future__ import annotations
 
-import datetime
-from typing import TYPE_CHECKING, Literal, Optional
+from typing import TYPE_CHECKING, Literal
 
 import yaml
 from checkov.main import Checkov
 
 from app.consts import CHECKOV_CONFIG_PATH
-from app.models import LastReportedRun
 
 if TYPE_CHECKING:
     from logging import Logger
@@ -21,7 +19,6 @@ class CheckovWhorf(Checkov):
         super().__init__(argv=argv)
 
         self.logger = logger
-        self.last_reported_run: Optional[LastReportedRun] = None
 
     def upload_results(
         self,
@@ -32,15 +29,7 @@ class CheckovWhorf(Checkov):
         git_configuration_folders: list[str] | None = None,
     ) -> None:
         # don't upload results with every run
-        if self.should_upload_results():
-            super().upload_results(root_folder, files, excluded_paths, included_paths, git_configuration_folders)
-            self.last_reported_run = LastReportedRun()
         return
-
-    def should_upload_results(self) -> bool:
-        if not self.last_reported_run:
-            return True
-        return datetime.datetime.now() - datetime.timedelta(hours=1) < self.last_reported_run.date
 
     def upload_results_periodically(self, root_folder: str) -> None:
         """Used to upload results on a periodic basis"""
