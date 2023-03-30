@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Literal
 
 import yaml
+from checkov.common.bridgecrew.bc_source import BCSourceType, SourceTypes
 from checkov.main import Checkov
 
 from app.consts import CHECKOV_CONFIG_PATH
@@ -69,7 +70,7 @@ class CheckovWhorf(Checkov):
         """Scan the given directory"""
 
         self.config.directory = [directory]
-        self.run()
+        self.run(source_type=SourceTypes[BCSourceType.KUBERNETES_WORKLOADS])
         self.upload_results_periodically(root_folder=directory)
 
         self.logger.info(f"Successfully scanned directory {directory} and uploaded results")
