@@ -138,7 +138,7 @@ jobs:
           COSIGN_EXPERIMENTAL: 1  # needed for keyless signing
 
       - name: Update deployment
-        uses: jacobtomlinson/gha-find-replace@4d085e89079e4d2e6971679ebc87da71492aa462  # v3
+        uses: jacobtomlinson/gha-find-replace@a51bbcd94d000df9ca0fcb54ec8be69aad8374b0  # v3
         with:
           find: "image: bridgecrew/whorf@sha256:[a-f0-9]{64}"
           replace: "image: ${{ env.DH_IMAGE_NAME }}@${{ steps.docker_push.outputs.digest }}"
