@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9a49229a11dffbf7f8c9e523a4664833de2558ee04420b0d22f7720ad6088164"
+            "sha256": "c0828828ad739dfa8c9a24636165ae47d54f6f63a28a2e40d64110c02d4339ab"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -198,19 +198,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:a1c48674c2ff25ddced599c51d14ba7a6dbe9fd51641e8d63a6887bebd9712d7",
-                "sha256:d388cb7f54f1a3056f91ffcfb5cf18b226454204e5df7a5c10774718c3fbb166"
+                "sha256:8972a5e0a04ea6f477c41e390765a46ec7bcffb62f99d4a0774ce70fb87bea59",
+                "sha256:97d942d958cac28687187b89ee88ac760e0fa3007094cb1d6b16e241144306f3"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.26.109"
+            "version": "==1.26.110"
         },
         "botocore": {
             "hashes": [
-                "sha256:2e449525f0ccedb31fdb962a77caac48b4c486c23515b84c5989a39a1823a024",
-                "sha256:cf43dddb7e2ba5425fe19fad68b10043307b61d9103d06566f1ab6034e38b8db"
+                "sha256:39879fcc3d263513f9ba92cc5060b5a4dbe54f758a917be29c7a71132e34f399",
+                "sha256:9d5054159782b19f27bff3e5a65bc494dc323255e889ea3abec002711a1fb0c0"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.29.109"
+            "version": "==1.29.110"
         },
         "cached-property": {
             "hashes": [
@@ -387,11 +387,11 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:8dc12a9fcf9e4bda75e4ead3660b2c63914ef609432379f65728b27815e78d39",
-                "sha256:e552f80b371bc194cf8942144a0103b60d8de46956bd9afe7e15349b9ae190be"
+                "sha256:a00419534db8a14e0878f061f1c51d1f5431f960a5db7242acb9e3990671625d",
+                "sha256:f99983ebf4470efccc8d66352f723ae4a7972b0953d49c320474350850a46ede"
             ],
             "index": "pypi",
-            "version": "==2.3.158"
+            "version": "==2.3.160"
         },
         "click": {
             "hashes": [
@@ -921,6 +921,7 @@
         },
         "prettytable": {
             "hashes": [
+                "sha256:ef8334ee40b7ec721651fc4d37ecc7bb2ef55fde5098d994438f0dfdaa385c0c",
                 "sha256:f4aaf2ed6e6062a82fd2e6e5289bbbe705ec2788fe401a3a1f62a1cea55526d2"
             ],
             "markers": "python_version >= '3.7'",
