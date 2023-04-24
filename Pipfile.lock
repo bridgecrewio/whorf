@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "749f17c6b88fdb8e1be529e8b70d1d4f6f172dd5755f823803e86f14f8fd3438"
+            "sha256": "f60853a4632ba217d67203e549ef5c3f2f4d9c3810f389fd55dc881a20ffb5cb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -387,11 +387,11 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:b8b79dcb351102df69b3f9982d06168bd6cfb8c75fe75cd38efcfd09dd94831e",
-                "sha256:cb9b36c9591765c6f73b664a37ac1b6a9b3e4435bb9754ed7fafdd5c4c2eb74f"
+                "sha256:6e140abe0e8e4437a7a157adaac0b8cf9b5669affea5e80b21e9491335309e94",
+                "sha256:addad2300a0b8dd1f94842126aa89068a998fe57328d6c052bbe6cce7b397d92"
             ],
             "index": "pypi",
-            "version": "==2.3.198"
+            "version": "==2.3.199"
         },
         "click": {
             "hashes": [
@@ -1250,11 +1250,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:6f0839fbdb7e3cfef1fc38d7954f5c1c26bf4eebb155a55c9bf8faf997b9fb67",
-                "sha256:bb16732e8eb928922eabaa022f881ae2b7cdcfaf9993ef1f5e841a96d32b8e0c"
+                "sha256:23aaf86b85ca52ceb801d32703f12d77517b2556af839621c641fca11287952b",
+                "sha256:f104fa03692a2602fa0fec6c6a9e63b6c8a968de13e17c026957dd1f53d80990"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.7.1"
+            "version": "==67.7.2"
         },
         "six": {
             "hashes": [
@@ -1676,11 +1676,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:6f0839fbdb7e3cfef1fc38d7954f5c1c26bf4eebb155a55c9bf8faf997b9fb67",
-                "sha256:bb16732e8eb928922eabaa022f881ae2b7cdcfaf9993ef1f5e841a96d32b8e0c"
+                "sha256:23aaf86b85ca52ceb801d32703f12d77517b2556af839621c641fca11287952b",
+                "sha256:f104fa03692a2602fa0fec6c6a9e63b6c8a968de13e17c026957dd1f53d80990"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.7.1"
+            "version": "==67.7.2"
         },
         "tomli": {
             "hashes": [
