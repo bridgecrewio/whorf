@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2912e77e0ad84be0969cccbfe6737c4ec4d25e42d80c02940534907da5a2a4c8"
+            "sha256": "70e4df46d3e513eae634237564205d60c78a201407f0702e3fb1f777a549ff88"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -142,11 +142,11 @@
         },
         "argcomplete": {
             "hashes": [
-                "sha256:798f28e11dc141f415879497599316a8a9126672a883064b851597a0d94be8a9",
-                "sha256:9fe49c66ba963b81b64025f74bfbd0275619a6bde1c7370654dc365d4ecc9a0b"
+                "sha256:b9ca96448e14fa459d7450a4ab5a22bbf9cee4ba7adddf03e65c398b5daeea28",
+                "sha256:e36fd646839933cbec7941c662ecb65338248667358dd3d968405a4506a60d9b"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==3.0.6"
+            "version": "==3.0.8"
         },
         "async-timeout": {
             "hashes": [
@@ -387,11 +387,11 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:2d96db75ada705daf0e3b0b301a08caecc950378344bffd9580fba76567041eb",
-                "sha256:9cd508f3df6a5e61d507fe2d9ecc58ebfb1ae349062b10676989efb79e0da65a"
+                "sha256:00a8553cce4a4b583bced0fd60b5a9a8c2ff289fc93db6c1bfe343714a497dec",
+                "sha256:a35f9c6331a29b8c87c783d3a2ab31da07359aaa1c0fe8b0c2b192961f1eff3f"
             ],
             "index": "pypi",
-            "version": "==2.3.194"
+            "version": "==2.3.195"
         },
         "click": {
             "hashes": [
@@ -1297,11 +1297,11 @@
         },
         "termcolor": {
             "hashes": [
-                "sha256:91ddd848e7251200eac969846cbae2dacd7d71c2871e92733289e7e3666f48e7",
-                "sha256:dfc8ac3f350788f23b2947b3e6cfa5a53b630b612e6cd8965a015a776020b99a"
+                "sha256:3afb05607b89aed0ffe25202399ee0867ad4d3cb4180d98aaf8eefa6a5f7d475",
+                "sha256:b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.2.0"
+            "version": "==2.3.0"
         },
         "texttable": {
             "hashes": [
