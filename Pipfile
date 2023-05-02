@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 checkov = "==2.3.214"
-flask = "==2.2.2"
+flask = "==2.3.2"
 flask-apscheduler = "==1.12.4"
 python-dotenv = "==0.21.0"
 gunicorn = "==20.1.0"
