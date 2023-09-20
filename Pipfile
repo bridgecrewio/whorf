@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-checkov = "==2.4.46"
+checkov = "==2.4.47"
 flask = "==2.2.2"
 flask-apscheduler = "==1.12.4"
 python-dotenv = "==0.21.0"
