@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3699fa7e47ea9dcafde8543cc542229fd2f89fd308f7ca663a37e6221caff47a"
+            "sha256": "c1b72c1a0ec0bac464f6e1ec1889f785b859f55d014109df3600d9ad5af5dcd8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -406,12 +406,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:74e6407769f5ee96b5a30f7fe653c74c3a2cc358d5ce49f15e098d7e30257c57",
-                "sha256:f84a223e1823a8120a86c292479ebbe1f602645d7ff23b83cb0452d9496e4961"
+                "sha256:0abb1744e051e2e5e12e7aaec67f08e4959e57b803be6453533a4b8a62d52be2",
+                "sha256:3e5a6a294e5aef38f99443988121595e6e0d16638d502908f18cb06c41405ba4"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==2.4.58"
+            "version": "==2.4.59"
         },
         "click": {
             "hashes": [
@@ -976,11 +976,11 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61",
-                "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+                "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5",
+                "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==23.1"
+            "version": "==23.2"
         },
         "ply": {
             "hashes": [
@@ -1858,11 +1858,11 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61",
-                "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+                "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5",
+                "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==23.1"
+            "version": "==23.2"
         },
         "platformdirs": {
             "hashes": [
