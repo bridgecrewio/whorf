@@ -48,6 +48,8 @@ jobs:
           # install needed tools
           python -m pip install --no-cache-dir --upgrade pipenv
 
+          # remove venv, if exists
+          pipenv --rm || true
           # update Pipfile
           pipenv --python ${{ env.PYTHON_VERSION }}
           pipenv install checkov==${{ steps.version.outputs.version }}
