@@ -1,6 +1,6 @@
 from typing import Callable, Any, ParamSpec, TypeVar, overload
 
-from apscheduler.schedulers.base import BaseScheduler  # type:ignore[import]
+from apscheduler.schedulers.base import BaseScheduler  # type:ignore[import-untyped]
 from flask import Flask
 
 _F = TypeVar("_F", bound=Callable[..., Any])
