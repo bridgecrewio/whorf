@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os.path
 from typing import TYPE_CHECKING, Literal
 
 import yaml
@@ -12,6 +13,7 @@ if TYPE_CHECKING:
     from logging import Logger
 
     from checkov.common.output.baseline import Baseline
+    from checkov.common.output.report import Report
     from checkov.common.runners.runner_registry import RunnerRegistry
 
 
@@ -24,10 +26,12 @@ class CheckovWhorf(Checkov):
     def upload_results(
         self,
         root_folder: str,
+        absolute_root_folder: str,
         files: list[str] | None = None,
         excluded_paths: list[str] | None = None,
         included_paths: list[str] | None = None,
         git_configuration_folders: list[str] | None = None,
+        sca_supported_ir_report: Report | None = None,
     ) -> None:
         # don't upload results with every run
         return
@@ -35,7 +39,7 @@ class CheckovWhorf(Checkov):
     def upload_results_periodically(self, root_folder: str) -> None:
         """Used to upload results on a periodic basis"""
 
-        super().upload_results(root_folder=root_folder)
+        super().upload_results(root_folder=root_folder, absolute_root_folder=os.path.abspath(root_folder))
 
     def print_results(
         self,
