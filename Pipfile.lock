@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e86482dc2825b649c6dc9297b2be8fd5085db39e96153e7631e6049d8583b5b5"
+            "sha256": "12b8930ce838ff0dd5e4e7ab3a28cfa2c059d4627b5e0b4a0bcdd8354dcbc5be"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -167,11 +167,11 @@
         },
         "cachetools": {
             "hashes": [
-                "sha256:95ef631eeaea14ba2e36f06437f36463aac3a096799e876ee55e5cdccb102590",
-                "sha256:dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
+                "sha256:086ee420196f7b2ab9ca2db2520aca326318b68fe5ba8bc4d49cca91add450f2",
+                "sha256:861f35a13a451f94e301ce2bec7cac63e881232ccce7ed67fab9b5df4d3beaa1"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==5.3.1"
+            "version": "==5.3.2"
         },
         "certifi": {
             "hashes": [
@@ -287,12 +287,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:13851074ba20dd8362be46cd213da52c3ecd9ca52c519fbfa03e933d714baf6d",
-                "sha256:1dbbf13ddb2b3536f66179180c22a7543e3222dc7cab727f58d5cbed4b91224c"
+                "sha256:1e9363114b263bb25308ff5234127ce1c1fb4897cc8a927ed5d314eab119cc13",
+                "sha256:f27b4e763616c8a2c7c215ea3edd679622e3c4c4caaa6a3c259309b0dbef5876"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.0.2"
+            "version": "==3.0.3"
         },
         "click": {
             "hashes": [
@@ -1206,12 +1206,12 @@
         },
         "pytest": {
             "hashes": [
-                "sha256:1d881c6124e08ff0a1bb75ba3ec0bfd8b5354a01c194ddd5a0a870a48d99b002",
-                "sha256:a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"
+                "sha256:0d009c083ea859a71b76adf7c1d502e4bc170b80a8ef002da5806527b9591fac",
+                "sha256:d989d136982de4e3b29dabcc838ad581c64e8ed52c11fbe86ddebd9da0818cd5"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==7.4.2"
+            "version": "==7.4.3"
         },
         "pytest-mock": {
             "hashes": [
