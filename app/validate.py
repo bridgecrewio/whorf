@@ -60,11 +60,10 @@ def process_failed_checks(ckv_whorf: CheckovWhorf, uid: str, obj_kind_name: str)
         try:
             for report in ckv_whorf.scan_reports:
                 for check in report.failed_checks:
-                    if check.check_id in ckv_whorf.config.hard_fail_on:
-                        hard_fails[check.check_id] = f"\n  Description: {check.check_name}"
-                        if check.guideline:
-                            hard_fails[check.check_id] += f"\n  Guidance: {check.guideline}"
-                    elif check.bc_check_id in ckv_whorf.config.hard_fail_on:
+                    if (
+                        check.check_id in ckv_whorf.config.hard_fail_on
+                        or check.bc_check_id in ckv_whorf.config.hard_fail_on
+                    ):
                         hard_fails[check.check_id] = f"\n  Description: {check.check_name}"
                         if check.guideline:
                             hard_fails[check.check_id] += f"\n  Guidance: {check.guideline}"

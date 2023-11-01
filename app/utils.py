@@ -66,9 +66,9 @@ def to_dict(obj: Any) -> Any:
             if val is not None:
                 result[v] = to_dict(val)
         return result
-    elif type(obj) == list:
+    elif isinstance(obj, list):
         return [to_dict(x) for x in obj]
-    elif type(obj) == datetime:
+    elif isinstance(obj, datetime):
         return str(obj)
     else:
         return obj

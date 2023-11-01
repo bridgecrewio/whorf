@@ -36,4 +36,8 @@ select = [
 ignore = ["ARG002", "E501"]
 per-file-ignores = { "tests/**/*" = ["S101"] }
 
-target-version = "py310"
+exclude = [
+    "extra_stubs",
+]
+
+target-version = "py311"

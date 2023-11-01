@@ -1,8 +1,8 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # mention "admissionController" as the source of integration to bridgecrew.cloud
 ENV BC_SOURCE=admissionController
-ENV PIP_ENV_VERSION="2022.11.25"
+ENV PIP_ENV_VERSION="2023.7.23"
 ENV RUN_IN_DOCKER=True
 
 RUN set -eux; \
@@ -16,10 +16,10 @@ WORKDIR /app
 COPY Pipfile Pipfile.lock ./
 
 RUN set -eux; \
-    pip install pipenv==${PIP_ENV_VERSION}; \
+    pip install --no-deps pipenv==${PIP_ENV_VERSION}; \
     pipenv requirements > requirements.txt; \
     pip install -r requirements.txt --no-deps; \
-    rm -f requirements.txt; \
+    rm -f requirements.txt Pipfile Pipfile.lock; \
     pip uninstall -y pipenv
 
 COPY wsgi.py ./

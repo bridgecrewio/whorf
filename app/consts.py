@@ -5,7 +5,7 @@ from pathlib import Path
 LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO").upper()
 
 CHECKOV_CONFIG_PATH = Path("config/.checkov.yaml")
-MANIFEST_ROOT_PATH = Path("/tmp")
+MANIFEST_ROOT_PATH = Path("/tmp")  # noqa: S108
 WHORF_CONFIG_PATH = Path("config/whorf.yaml")
 
 DEFAULT_CHECKOV_ARGS = ["--framework", "kubernetes", "--repo-id", "k8s_ac/cluster"]
