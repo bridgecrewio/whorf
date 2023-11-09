@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "83c1d18b754ea5147f57c3d3faf8b7672fbf1dbad320e9ab73c91cae8cc09d08"
+            "sha256": "dc98947e66e912a04fd2ab30270185a6e26adf9352b072a833d1f8bf1d65065b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -237,19 +237,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:66e457b5f1580eb1f29855d867dec743eeec42b3935372eee5e6730e5e3124df",
-                "sha256:6ec7da884eed5c07e679d251bd5c66e4e2f64755ed98270a20323b241c54a743"
+                "sha256:ae1352d0193aaf90c47d6e57ab054b0b1fabf0fbbe9f51eefec431bf2c3e18f4",
+                "sha256:bb8ecd6f86289ceaed566eefc0ce8ac66a85e5954aef115ed4ac602cbe61f101"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.28.81"
+            "version": "==1.28.82"
         },
         "botocore": {
             "hashes": [
-                "sha256:afb0886c5a5a542f763cc1644b1c1b4a783698d79980eb48052d1676d6b3d14e",
-                "sha256:eeb09a77c3e931667c9442565e8697e89e685089912a96d95f65b63e4b2c8c71"
+                "sha256:5f213229348433d0b7b6aac2d9ae2fdd15c4ff9f38c30ea072f5b300bf6c1dcb",
+                "sha256:9d7d8de1789b1ed37b86a2b0a4fcff9fac91deef0548461d411e1626f68ca70c"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.31.81"
+            "version": "==1.31.82"
         },
         "cached-property": {
             "hashes": [
@@ -430,12 +430,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:7b1ca9800382f7b5f1dde99f2fc9b91d33b26873ec6f071455ab089921e0bb23",
-                "sha256:87392373f4e1a4f6003b18fbf5e02a41dc356a291382dfdb7f20930955b86a0b"
+                "sha256:247edc1cb5926c3692523390dc81173c494b0f36dbb4f742ffe5687e0ba9dbec",
+                "sha256:532ab4528fec2f39bd6a60a778885ddd0e11d82a86a1aaad273e3a1b786038ab"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.0.28"
+            "version": "==3.0.29"
         },
         "click": {
             "hashes": [
@@ -1018,11 +1018,11 @@
         },
         "openai": {
             "hashes": [
-                "sha256:72fa414378913ca74432ac618ca6cdfd78a502fcfad1e06cc499b9dba8ff2c8e",
-                "sha256:bcb4d1fd471cf616031053636841acdc820cd42cbc6cd3e4036c85f682752656"
+                "sha256:61b273f813534df1d91cb185095de52471ec51198f4ea355bf21692f6c4b9a19",
+                "sha256:864c3c0d611e555e92be2960043d5f0ca3b995847fa59acd5b41faa00f9b16e0"
             ],
             "markers": "python_full_version >= '3.7.1'",
-            "version": "==1.1.2"
+            "version": "==1.2.0"
         },
         "packageurl-python": {
             "hashes": [
