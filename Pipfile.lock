@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "25c9cac72ce6abe2b289bbb4136773490718570fdca21f695b265b92240aca6d"
+            "sha256": "6e4eaa777fe35cb9a287e7c8925d73aabc882870c0c33afbf3c70817e1b0e187"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -210,19 +210,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:620f1eb3e18e780be58383b4a4e10db003d2314131190514153996032c8d932d",
-                "sha256:8d54fa3a9290020f9a7f488f9cbe821029de0af05a677751b12973a5f726a5e2"
+                "sha256:2225edaea2fa17274f62707c12d9f7803c998af7089fe8a1ec8e4f1ebf47677e",
+                "sha256:475efcff30401041e9c348e20613eca90ab14a224e2f978ca80de98ba3499435"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.33.11"
+            "version": "==1.33.12"
         },
         "botocore": {
             "hashes": [
-                "sha256:b14b328f902d120de0a09eaa657a9a701c0ceeb711197c2f01ef0523f855086c",
-                "sha256:b46227eb3fa9cfdc8f5a83920ef347e67adea8095830ed265a3373b13b54421f"
+                "sha256:067c94fa88583c04ae897d48a11d2be09f280363b8e794b82d78d631d3a3e910",
+                "sha256:48b9cfb9c5f7f9634a71782f16a324acb522b65856ad46be69efe04c3322b23c"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.33.11"
+            "version": "==1.33.12"
         },
         "cached-property": {
             "hashes": [
@@ -403,12 +403,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:2e7dee15e65fd7627c2c559da076943d3e7ef585895687a8a251ae0524b225be",
-                "sha256:3052da1be726565335b635bc0c45ad9fa1304d7770a19629280dd37604494021"
+                "sha256:a6f2a47c0aa5852b73209c347ec723f7a76364764b4da3204465fc0b504a3b39",
+                "sha256:b2f43b7ec2c28daa7d140eae05018e4ce6d2de79a447bdb467264729907c620c"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.1.33"
+            "version": "==3.1.34"
         },
         "click": {
             "hashes": [
@@ -1864,10 +1864,10 @@
         },
         "distlib": {
             "hashes": [
-                "sha256:2e24928bc811348f0feb63014e97aaae3037f2cf48712d51ae61df7fd6075057",
-                "sha256:9dafe54b34a028eafd95039d5e5d4851a13734540f1331060d31c9916e7147a8"
+                "sha256:034db59a0b96f8ca18035f36290806a9a6e6bd9d1ff91e45a7f172eb17e51784",
+                "sha256:1530ea13e350031b6312d8580ddb6b27a104275a31106523b8f123787f494f64"
             ],
-            "version": "==0.3.7"
+            "version": "==0.3.8"
         },
         "filelock": {
             "hashes": [
