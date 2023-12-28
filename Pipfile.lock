@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3731f3a1e024913a3134687121b8b82e945b3cdf8b9f75aa900297de1588b374"
+            "sha256": "3b215933bb31bbd56244ca21ecc1db4027161fc2bdb4cf410ead55efe1c0a522"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -210,19 +210,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:04c1cc752946f20513ed70058d4b750b3591c82bb59cbbe26157dbe125e687cc",
-                "sha256:76b62ca46a4632117b4cd31ae56164492e41afb9fec41973688293c536580561"
+                "sha256:18c386a55e461749e6c9c8a10627a230db18a20dd72f2950ce19546974f15cd5",
+                "sha256:8e48343d52389041af053992decf651bc4fc7b2d65eca12acdcff62d446ecdf4"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==1.34.7"
+            "version": "==1.34.9"
         },
         "botocore": {
             "hashes": [
-                "sha256:85164e924965c850fb02b1edcbef03f61413aff5f0064e660992b8b76c996d0c",
-                "sha256:b145a52b7d1fd4e072bcd692369d4cb77f971651bb0dc2bf38e2b4f9d62973e6"
+                "sha256:2cf43fa5b5438a95fc466c700f3098228b45df38e311103488554b2334b42ee3",
+                "sha256:b40f027f371a1bd211ef67a3727c74bc3713af5fc5d830d4587abda296ebb19e"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==1.34.7"
+            "version": "==1.34.9"
         },
         "cached-property": {
             "hashes": [
@@ -403,12 +403,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:28d4c2135bd7aa5da1c609445a162f3d79410cd1b53d6d530fc764184d6c9b97",
-                "sha256:3d5e414b3e0a7b5555a7f4dfa64b9f9989306c0942b333a8034bc9b8d99f94c8"
+                "sha256:66c5c3a7c646e11bccd143200718265dc8a2b9c34d69e6c24aca2781fe44b754",
+                "sha256:815cc1b5c1300982ccd337daa2606fbb1b0a224ed083aa92d4674570d718701c"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.1.44"
+            "version": "==3.1.45"
         },
         "click": {
             "hashes": [
