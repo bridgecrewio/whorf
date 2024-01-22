@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8b153aaff97a009f7a5d6371ccdb70fcb58ca8da80fb05e2e875746d0a63cff3"
+            "sha256": "0e6085fdb1fb046d0859ace865375d35f243388e73ef72ed363bbf25784750ae"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -403,12 +403,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:d0aa3ad3c25a1021d1bcf20326a213bf68f21129f60366441b258767f0f1aee2",
-                "sha256:e997c20502d5bf0473d7bdb3417ceb0e7c5f19e07b22893bc4111dd94e08be55"
+                "sha256:15ec82cc2e8acf6a2b7c777b30dd601cb5f369ad5f95dc76199ca7ff444fe630",
+                "sha256:cb467f25b27acfb1fddf9fa5f39685f24307e9bf1d0816612202178fa2cd0d8c"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.1.68"
+            "version": "==3.1.69"
         },
         "click": {
             "hashes": [
@@ -460,11 +460,11 @@
         },
         "cyclonedx-python-lib": {
             "hashes": [
-                "sha256:0e73c1036c2f7fc67adc28aef807e6b44340ea70202aab197fb06b20ea165de8",
-                "sha256:82f2489de3c0cadad5af1ad7fa6b6a185f985746370245d38769699c734533c6"
+                "sha256:1bcfea62211bc074b94dee05aa1fc2610e1bb6b8c507182073f4344e3e807b39",
+                "sha256:a877784f5f1066398336b61cdb7413311e93a6bc46a5065ba0d8e0dddbc54103"
             ],
             "markers": "python_version >= '3.8' and python_version < '4.0'",
-            "version": "==6.3.0"
+            "version": "==6.4.0"
         },
         "decorator": {
             "hashes": [
@@ -1026,11 +1026,11 @@
         },
         "py-serializable": {
             "hashes": [
-                "sha256:389c2254d912bec3a44acdac667c947d73c59325050d5ae66386e1ed7108a45a",
-                "sha256:875bb9c01df77f563dfcd1e75bb4244b5596083d3aad4ccd3fb63e1f5a9d3e5f"
+                "sha256:524df68c46315d7272959ae5296244e5a1e1e28330472ec214394162c39f545e",
+                "sha256:845a9399a16550e8703c3fb0da4fbb746a4e5f6cc4c95647c315c71fd6567cd5"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4.0'",
-            "version": "==0.17.1"
+            "markers": "python_version >= '3.8' and python_version < '4.0'",
+            "version": "==1.0.0"
         },
         "pycares": {
             "hashes": [
