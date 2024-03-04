@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "01aae5a549f697627872349d7b6710ac670fd88958fbaeb7dfd1e995219dd69d"
+            "sha256": "27973fa077466d0e63376d88c183d0f0bc4c1561eab8d1d5e74c64b5e43b6bf0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -403,12 +403,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:dca00fe8f0e04fd4fde88de5143bbe01aae7966351cd0f70f69456313bd43428",
-                "sha256:e02dcdde5e2d1cb07490b436d29bd2477f23aad797e653d2b2709c9b809edca0"
+                "sha256:131bfc78e39af7a01077c51405f51b1a446d6a29d94281afec783a5c58ec8f9b",
+                "sha256:a47dd5c7d2c8b3e60646955edbba89ebb074d83861633a4cb2b472a5b8dac275"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.30"
+            "version": "==3.2.31"
         },
         "click": {
             "hashes": [
@@ -460,11 +460,11 @@
         },
         "cyclonedx-python-lib": {
             "hashes": [
-                "sha256:47ed05c7a82d0aa355f09a7fd0048e13f1440b6a96b603dc26d02ba782e6274e",
-                "sha256:b857972c6a7317faa66ec4ed4b6040dae7fca82e40eddfbeaa7f0f37f9a7cac7"
+                "sha256:3d9450e500ca6f7cf9625e7bff700599dcca70e4a2180705b61917c59743506e",
+                "sha256:bc9f29073f4ed23b68ba01e342496cd2d1d5232d88b63abdc69f5072f472f8de"
             ],
             "markers": "python_version >= '3.8' and python_version < '4.0'",
-            "version": "==6.4.2"
+            "version": "==6.4.3"
         },
         "decorator": {
             "hashes": [
@@ -1920,12 +1920,12 @@
         },
         "pytest": {
             "hashes": [
-                "sha256:ee32db7af8de4629a455806befa90559f307424c07b8413ccfc30bf5b221dd7e",
-                "sha256:f8fa04ab8f98d185113ae60ea6d79c22f8143b14bc1caeced44a0ab844928323"
+                "sha256:d4051d623a2e0b7e51960ba963193b09ce6daeb9759a451844a21e4ddedfc1bd",
+                "sha256:edfaaef32ce5172d5466b5127b42e0d6d35ebbe4453f0e3505d96afd93f6b096"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==8.1.0"
+            "version": "==8.0.2"
         },
         "pytest-mock": {
             "hashes": [
