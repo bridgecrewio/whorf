@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4d66ddabe87f98255354295d770ba04842531cd84e61e1ba35620658a28db8dc"
+            "sha256": "05e55676ec2efc67ef9d1221df1d713038aa4a17b41e0af661ba6554c9b928b0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -179,11 +179,11 @@
         },
         "beartype": {
             "hashes": [
-                "sha256:c22b21e1f785cfcf5c4d3d13070f532b6243a3ad67e68d2298ff08d539847dce",
-                "sha256:e911e1ae7de4bccd15745f7643609d8732f64de5c2fb844e89cbbed1c5a8d495"
+                "sha256:aa254f7cf87eea6cdd329f488b5d8282f6f30befe496fbbcd844d92ede6e6f23",
+                "sha256:c07f79e0fb3c9ade07f260b844f6fdcfaa68f70e71369a471d40ad92fc5b15b5"
             ],
             "markers": "python_full_version >= '3.8.0'",
-            "version": "==0.17.2"
+            "version": "==0.18.0"
         },
         "beautifulsoup4": {
             "hashes": [
@@ -403,12 +403,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:0a498fe4d3d530494132690de176d63a05284dc3784c5fd7212e89bb09651f39",
-                "sha256:0ae98371ac5a6aef983890d378118653cfa3c2ded32410522b6cc0bdf1f8100e"
+                "sha256:c3f5826bccd34d1ff6e3ed9764a5f5b2822012c01cc23aee5cbfb61bca619c9b",
+                "sha256:dd1a8668231d72e626170a41e0bbb7123d07874a754641a814c796a6214d926d"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.50"
+            "version": "==3.2.51"
         },
         "click": {
             "hashes": [
@@ -1677,11 +1677,11 @@
         },
         "werkzeug": {
             "hashes": [
-                "sha256:507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc",
-                "sha256:90a285dc0e42ad56b34e696398b8122ee4c681833fb35b8334a095d82c56da10"
+                "sha256:3aac3f5da756f93030740bc235d3e09449efcf65f2f55e3602e1d851b8f48795",
+                "sha256:e39b645a6ac92822588e7b39a692e7828724ceae0b0d702ef96701f90e70128d"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==3.0.1"
+            "version": "==3.0.2"
         },
         "xmltodict": {
             "hashes": [
