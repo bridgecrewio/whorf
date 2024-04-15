@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "63c07ea64c4d995d8eb8f145c10d8bf1e56649d8a3be9009b3148bcd7d271eb0"
+            "sha256": "ef97c7a7a517bfe930f823232f96af63988e0983d0e6092a6b139e2e4b54bf16"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -139,11 +139,11 @@
         },
         "argcomplete": {
             "hashes": [
-                "sha256:bf7900329262e481be5a15f56f19736b376df6f82ed27576fa893652c5de6c23",
-                "sha256:c12355e0494c76a2a7b73e3a59b09024ca0ba1e279fb9ed6c1b82d5b74b6a70c"
+                "sha256:c168c3723482c031df3c207d4ba8fa702717ccb9fc0bfe4117166c1f537b4a54",
+                "sha256:fd03ff4a5b9e6580569d34b273f741e85cd9e072f3feeeee3eba4891c70eda62"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.3"
+            "version": "==3.3.0"
         },
         "attrs": {
             "hashes": [
@@ -155,11 +155,11 @@
         },
         "bc-detect-secrets": {
             "hashes": [
-                "sha256:07c643d72ff28b46a1c0ca70a3d8998bf2dc193286db5602bc1fb14e2a89075d",
-                "sha256:3ce1eb6f2d85b5890379fb40d0c71d9543b88193c3ae46644a30d5620ff7f497"
+                "sha256:a1833883b7613bc0dbef3da5628a545cf4d6d732239ac403a2e8e640060cc744",
+                "sha256:c4708491e4d68a402176b896c13bc2862fe4b8cbfb5fb38061f1f36e8e180d05"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==1.5.5"
+            "version": "==1.5.7"
         },
         "bc-jsonpath-ng": {
             "hashes": [
@@ -403,12 +403,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:b739d0c5a595d15db9831cabfa7ac2d4e06e6aa84ff17d3830ee7152a1c711bc",
-                "sha256:cef869a0a16297233babf5cd790608e14f1ee6ceb63b03249ef328a77b56b655"
+                "sha256:13c0fd6b58e0162e2c656b81c54d567a1a56190a4c7b76c3be16841118ce1ad2",
+                "sha256:3e69b77ee484d522bd9a065c81f8bf61e725874aa5abe362a2bbbb13bbc18f8e"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.63"
+            "version": "==3.2.64"
         },
         "click": {
             "hashes": [
