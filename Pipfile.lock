@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e66d884332056503cd1e7b184802a709d4a87a2115211270428151c1c62755a3"
+            "sha256": "7ed245dc42f0c44321cd338c68d1a4935ce023f92de9df7222ccc389d8419ee5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -25,11 +25,11 @@
         },
         "aiohappyeyeballs": {
             "hashes": [
-                "sha256:5fdd7d87889c63183afc18ce9271f9b0a7d32c2303e394468dd45d514a757745",
-                "sha256:a980909d50efcd44795c4afeca523296716d50cd756ddca6af8c65b996e27de8"
+                "sha256:147ec992cf873d74f5062644332c539fcd42956dc69453fe5204195e560517e1",
+                "sha256:9b05052f9042985d32ecbe4b59a77ae19c006a78f1344d7fdad69d28ded3d0b0"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==2.4.4"
+            "markers": "python_version >= '3.9'",
+            "version": "==2.4.6"
         },
         "aiohttp": {
             "hashes": [
@@ -434,12 +434,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:152c4fae75ed720bb157e77ae754743bc6d433dfdd4b35f6f56cc81c06a5936d",
-                "sha256:5e42d445ee628f5a356fdcbfa81cf168d08a5fca93eea3148ef5cd82622a0d8c"
+                "sha256:623cae52104dd1c17b856da563d449d3e40e457fea1dbbaa3fea3c69db8ffea5",
+                "sha256:fac97ee7c72adfb1962287511d2e032c72f7cef1d981511d6e601b7a8b15e8aa"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.368"
+            "version": "==3.2.369"
         },
         "click": {
             "hashes": [
@@ -2089,11 +2089,11 @@
         },
         "identify": {
             "hashes": [
-                "sha256:7bec12768ed44ea4761efb47806f0a41f86e7c0a5fdf5950d4648c90eca7e251",
-                "sha256:cbd1810bce79f8b671ecb20f53ee0ae8e86ae84b557de31d89709dc2a48ba881"
+                "sha256:155931cb617a401807b09ecec6635d6c692d180090a1cedca8ef7d58ba5b6aa0",
+                "sha256:3fa266b42eba321ee0b2bb0936a6a6b9e36a1351cbb69055b3082f4193035684"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2.6.6"
+            "version": "==2.6.7"
         },
         "iniconfig": {
             "hashes": [
