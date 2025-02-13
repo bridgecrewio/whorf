@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7ed245dc42f0c44321cd338c68d1a4935ce023f92de9df7222ccc389d8419ee5"
+            "sha256": "43351d259256aa502ebb46b5a68386e77e643c171430accd375a2015072ca3b4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -434,12 +434,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:623cae52104dd1c17b856da563d449d3e40e457fea1dbbaa3fea3c69db8ffea5",
-                "sha256:fac97ee7c72adfb1962287511d2e032c72f7cef1d981511d6e601b7a8b15e8aa"
+                "sha256:3e18c792b6b8e73cd7eb59b80a28cf98ce3c9d32edffe8de2de9b8e11069f862",
+                "sha256:3e84d0d44753ce501545b54dc72868a16177d2ffa64baf5f026503e42d332201"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.369"
+            "version": "==3.2.370"
         },
         "click": {
             "hashes": [
@@ -1914,11 +1914,11 @@
         },
         "tzlocal": {
             "hashes": [
-                "sha256:49816ef2fe65ea8ac19d19aa7a1ae0551c834303d5014c6d5a62e4cbda8047b8",
-                "sha256:8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
+                "sha256:2fafbfc07e9d8b49ade18f898d6bcd37ae88ce3ad6486842a2e4f03af68323d2",
+                "sha256:3814135a1bb29763c6e4f08fd6e41dbb435c7a60bfbb03270211bcc537187d8c"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==5.2"
+            "markers": "python_version >= '3.9'",
+            "version": "==5.3"
         },
         "unidiff": {
             "hashes": [
@@ -2287,11 +2287,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:4e4cb403c0b0da39e13b46b1b2476e505cb0046b25f242bee80f62bf990b2779",
-                "sha256:b8b8970138d32fb606192cb97f6cd4bb644fa486be9308fb9b63f81091b5dc35"
+                "sha256:fdaabebf6d03b5ba83ae0a02cfe96f48a716f4fae556461d180825866f75b728",
+                "sha256:febddfc3d1ea571bdb1dc0f98d7b45d24def7428214d4fb73cc486c9568cce6a"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==20.29.1"
+            "version": "==20.29.2"
         }
     }
 }
