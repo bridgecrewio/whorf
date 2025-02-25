@@ -8,7 +8,7 @@ flask = "==2.3.3"
 flask-apscheduler = "==1.13.0"
 python-dotenv = "==1.0.0"
 gunicorn = "==21.2.0"
-checkov = "==3.2.375"
+checkov = "==3.2.376"
 
 [dev-packages]
 mypy = "*"
