@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e9507ae22ecf497a2e1ad31e169dc6ec277c92f5c7928e2033de8c3f8dae511f"
+            "sha256": "5c856c988a991a9c11dffa09fd091964e8f3c50d96138806c935364782a8d64b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -25,11 +25,11 @@
         },
         "aiohappyeyeballs": {
             "hashes": [
-                "sha256:19728772cb12263077982d2f55453babd8bec6a052a926cd5c0c42796da8bf62",
-                "sha256:6cac4f5dd6e34a9644e69cf9021ef679e4394f54e58a183056d12009e42ea9e3"
+                "sha256:0850b580748c7071db98bffff6d4c94028d0d3035acc20fd721a0ce7e8cac35d",
+                "sha256:18fde6204a76deeabc97c48bdd01d5801cfda5d6b9c8bbeb1aaaee9d648ca191"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2.4.8"
+            "version": "==2.5.0"
         },
         "aiohttp": {
             "hashes": [
@@ -152,11 +152,11 @@
         },
         "argcomplete": {
             "hashes": [
-                "sha256:2ab2c4a215c59fd6caaff41a869480a23e8f6a5f910b266c1808037f4e375b61",
-                "sha256:c12bf50eded8aebb298c7b7da7a5ff3ee24dffd9f5281867dfe1424b58c55392"
+                "sha256:2e4e42ec0ba2fff54b0d244d0b1623e86057673e57bafe72dda59c64bd5dee8b",
+                "sha256:4e3e4e10beb20e06444dbac0ac8dda650cb6349caeefe980208d3c548708bedd"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==3.5.3"
+            "version": "==3.6.0"
         },
         "attrs": {
             "hashes": [
@@ -168,11 +168,11 @@
         },
         "bc-detect-secrets": {
             "hashes": [
-                "sha256:145eef7c26d3defa87364269bc38e5028abf06a8bbdda543e2fb75f70360238a",
-                "sha256:2e1c86e3c22427131d82edd76aa430a205b3258ae810ae44e15844ab5c4c0626"
+                "sha256:6ad6e7b5caf8b10424dca23a5c4c436ea6f259d485217752b1ba175e58e178f8",
+                "sha256:9c4639c7f8e8db0d92e8f118ec99443ffe8ec9747c93735cfe3a5680820c96f6"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==1.5.36"
+            "version": "==1.5.37"
         },
         "bc-jsonpath-ng": {
             "hashes": [
@@ -434,12 +434,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:36d830415d82345ead3f1f7e5f31d36dd4ceecebd001bf214f788503a455bf29",
-                "sha256:8eebca2e33c7cf992369f5e171e3363b5904509e6c6c0834bdd7c2b85f5850b1"
+                "sha256:b6d40c066cd7acc943bb6d892964f7fb5032f6867a905f42cc557c0ae09dbc55",
+                "sha256:d533ffa99995fc7712ac031a8b79ee05a4812c0656fae3ac42eae79b70d1fc00"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==3.2.381"
+            "version": "==3.2.382"
         },
         "click": {
             "hashes": [
@@ -703,11 +703,11 @@
         },
         "jinja2": {
             "hashes": [
-                "sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb",
-                "sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb"
+                "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d",
+                "sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==3.1.5"
+            "version": "==3.1.6"
         },
         "jmespath": {
             "hashes": [
@@ -1930,11 +1930,11 @@
         },
         "tzlocal": {
             "hashes": [
-                "sha256:2fafbfc07e9d8b49ade18f898d6bcd37ae88ce3ad6486842a2e4f03af68323d2",
-                "sha256:3814135a1bb29763c6e4f08fd6e41dbb435c7a60bfbb03270211bcc537187d8c"
+                "sha256:cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd",
+                "sha256:eb1a66c3ef5847adf7a834f1be0800581b683b5608e74f86ecbcef8ab91bb85d"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==5.3"
+            "version": "==5.3.1"
         },
         "unidiff": {
             "hashes": [
