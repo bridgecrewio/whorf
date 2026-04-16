@@ -18,7 +18,7 @@ webhooks:
         resources:
           - "deployments"
           - "pods"
-          - "clusteroles"
+          - "clusterroles"
           - "replicasets"
         apiVersions:
           - "*"
