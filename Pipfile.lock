@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0e93e72b2113d2bfc55ca1a15ee763716fd628a214dc869a93fad1cec537ead1"
+            "sha256": "13eaa81b507cef45e3175a677cb638f01db4da45d60e7860df67be2733d12e71"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -536,12 +536,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:656b035d378f5ca26457c36cf3f9b8d0fe0cc60d3d2f8ad96676d5305946be84",
-                "sha256:869ce2a4ca2f8eb540f57e95209ca9536c4420d24aa9367dfe24c22ec4dd7328"
+                "sha256:2cb06fccb6db07f61f14aaec64fef47919de056dfeb6bbd0bd509de8231d6cca",
+                "sha256:e92e245447a00151950bc0050408ef1a4ea67e300bfb1f26693c77086e31852b"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.9'",
-            "version": "==3.2.531"
+            "version": "==3.2.532"
         },
         "click": {
             "hashes": [
@@ -638,6 +638,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==2.1.3"
+        },
+        "ecdsa": {
+            "hashes": [
+                "sha256:62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930",
+                "sha256:840f5dc5e375c68f36c1a7a5b9caad28f95daa65185c9253c0c08dd952bb7399"
+            ],
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
+            "version": "==0.19.2"
         },
         "flask": {
             "hashes": [
@@ -2475,10 +2483,10 @@
         },
         "distlib": {
             "hashes": [
-                "sha256:9659f7d87e46584a30b5780e43ac7a2143098441670ff0a49d5f9034c54a6c16",
-                "sha256:feec40075be03a04501a973d81f633735b4b69f98b05450592310c0f401a4e0d"
+                "sha256:9c2c552c68cbadc619f2d0ed3a69e27c351a3f4c9baa9ffb7df9e9cdc3d19a97",
+                "sha256:c3804d0d2d4b5fcd44036eb860cb6660485fcdf5c2aba53dc324d805837ea65b"
             ],
-            "version": "==0.4.0"
+            "version": "==0.4.1"
         },
         "filelock": {
             "hashes": [
