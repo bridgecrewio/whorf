@@ -209,3 +209,13 @@ def package_record() -> Record:
             "fixed_versions": [],
         },
     )
+
+
+@pytest.fixture()
+def minimal_deployment_manifest() -> str:
+    return (Path(__file__).parent / "manifests/deployment-minimal.yaml").read_text()
+
+
+@pytest.fixture()
+def hostpid_deployment_manifest() -> str:
+    return (Path(__file__).parent / "manifests/deployment-hostpid.yaml").read_text()
