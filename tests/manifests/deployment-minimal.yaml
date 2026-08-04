@@ -1,0 +1,18 @@
+# Minimal valid deployment used by check-specific tests
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minimal
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: minimal
+  template:
+    metadata:
+      labels:
+        app: minimal
+    spec:
+      containers:
+        - name: app
+          image: nginx:1.25
