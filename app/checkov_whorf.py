@@ -15,6 +15,7 @@ if TYPE_CHECKING:
     from checkov.common.output.baseline import Baseline
     from checkov.common.output.report import Report
     from checkov.common.runners.runner_registry import RunnerRegistry
+    from checkov.common.sast.consts import SastLanguages
 
 
 class CheckovWhorf(Checkov):
@@ -22,6 +23,11 @@ class CheckovWhorf(Checkov):
         super().__init__(argv=argv)
 
         self.logger = logger
+
+        # Checkov shallow-copies a module-level list of runner instances into each
+        # Checkov object. Some runners retain scan state, so replace them with fresh
+        # instances to prevent stale manifests from leaking between requests.
+        self.runners = [runner.__class__() for runner in self.runners]
 
     def upload_results(
         self,
@@ -32,6 +38,7 @@ class CheckovWhorf(Checkov):
         included_paths: list[str] | None = None,
         git_configuration_folders: list[str] | None = None,
         sca_supported_ir_report: Report | None = None,
+        sast_languages: set[SastLanguages] | None = None,
     ) -> None:
         # don't upload results with every run
         return

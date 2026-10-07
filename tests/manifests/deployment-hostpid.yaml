@@ -1,0 +1,19 @@
+# Deployment that fails CKV_K8S_17 "Containers should not share the host process ID namespace"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostpid-enabled
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: hostpid-enabled
+  template:
+    metadata:
+      labels:
+        app: hostpid-enabled
+    spec:
+      hostPID: true
+      containers:
+        - name: app
+          image: nginx:1.25
