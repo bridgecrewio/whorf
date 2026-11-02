@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "db43b5e78310dccd884fdcb5dcd91550e3de551694cca62b737d118573a50797"
+            "sha256": "666a4f9a25f0297d43c1a8c9b32ceae71f18ea4897fbc1b929dd4d38f954d7a5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -636,12 +636,12 @@
         },
         "checkov": {
             "hashes": [
-                "sha256:0caedd988e0ebdce36abb24d34c4f2131c86a4bda7d91aa0568ecb05fe68599f",
-                "sha256:4fd9be39870b180384664331a5ade58e7ff5976b2564f3e5f94eda6a17c3b326"
+                "sha256:2513d366c9b6bec3b91528faa6095b410be5f940277833771b427a6a56134915",
+                "sha256:666f376019f6a9fdbeb5c9d2a57be3fb83a4acd2d924d447942450a926ba0f55"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.9'",
-            "version": "==3.4.2"
+            "version": "==3.4.3"
         },
         "click": {
             "hashes": [
@@ -2786,11 +2786,11 @@
         },
         "filelock": {
             "hashes": [
-                "sha256:ee7af8ede36dcaf12e1016d9f7c3a63ecd5497d46f85dab21b8c779b8f944e97",
-                "sha256:fd7d4fca497bf3e3d0945a13261f8e684f2aef12ce7cf76aef26e13bf7388b88"
+                "sha256:31f6f7e3a8b6f0bd89114d30c5d5218ea1cfb63e5c4aa695b7559314a209bc7f",
+                "sha256:d08972bbca2b8767ee552aff877b091dd111ffb1d22de7de885766ea7d719d5e"
             ],
             "markers": "python_version >= '3.11'",
-            "version": "==4.2.6"
+            "version": "==4.2.7"
         },
         "identify": {
             "hashes": [
@@ -3095,11 +3095,11 @@
         },
         "python-discovery": {
             "hashes": [
-                "sha256:88beb57e51b919c30f303b053ec41359298ca349192035b0a802c76347ae96d7",
-                "sha256:fb65edfff3541b7ceb3a39be334a0f69f4cb5148287a053e1874748742fda93b"
+                "sha256:83e3c0024b93e256809dc9cd053537a37df6d3badc3b68aa03006a224336b21f",
+                "sha256:a78322b3b70c5d61dddc2f37ca1beffa9a5ce01cedf3526444e01bfc94f50b35"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==1.9.0"
+            "version": "==1.9.1"
         },
         "pyyaml": {
             "hashes": [
